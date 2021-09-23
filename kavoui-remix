@@ -1470,6 +1470,7 @@ function Kavo.CreateLib(kavName, themeList)
                 dropinf = dropinf or "Dropdown info"
                 callback = callback or function() end   
 
+                local dropitems = {}
                 local opened = false
                 local DropYSize = 33
 
@@ -1737,8 +1738,22 @@ function Kavo.CreateLib(kavName, themeList)
                     optionSelect.MouseButton1Click:Connect(function()
                         if not focusing then
                             opened = false
-                            callback(v)
-                            itemTextbox.Text = v
+                            if table.find(dropitems, v) then
+                                table.remove(dropitems, v)
+                            else
+                                table.insert(dropitems, v)
+                                for ind,val in pairs(dropitems) do
+                                    local count = 0
+                                    count = count + 1
+                                    if count == 1 then
+                                        callback(v)
+                                        itemTextbox.Text = v
+                                    elseif count > 1 then
+                                        callback(tostring(v)..", ")
+                                        itemTextbox.Text = tostring(v)..", "
+                                    end
+                                end
+                            end
                             dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), 'InOut', 'Linear', 0.08)
                             wait(0.1)
                             updateSectionFrame()

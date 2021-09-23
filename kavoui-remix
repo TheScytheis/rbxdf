@@ -1737,8 +1737,7 @@ function Kavo.CreateLib(kavName, themeList)
                     optionSelect.MouseButton1Click:Connect(function()
                         if not focusing then
                             opened = false
-			    getgenv().abacate = "Abacate"
-                            callback(getgenv().abacate)
+                            callback(v)
                             itemTextbox.Text = v
                             dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), 'InOut', 'Linear', 0.08)
                             wait(0.1)

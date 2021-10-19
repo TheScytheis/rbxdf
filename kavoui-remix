@@ -403,11 +403,11 @@ function Kavo.CreateLib(kavName, themeList)
         Objects[tabButton] = "SchemeColor"
         tabButton.Size = UDim2.new(1, 0, 0.140, 0)
         tabButton.AutoButtonColor = false
-        tabButton.Font = Enum.Font.Gotham
+        tabButton.Font = Enum.Font.GothamSemibold
         tabButton.Text = tabName
         tabButton.TextColor3 = themeList.TextColor
         Objects[tabButton] = "TextColor3"
-        tabButton.TextSize = 14.000
+        tabButton.TextSize = 19.000
         tabButton.BackgroundTransparency = 1
 
         if first then

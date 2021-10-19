@@ -206,6 +206,7 @@ function Kavo.CreateLib(kavName, themeList)
     local pages = Instance.new("Frame")
     local Pages = Instance.new("Folder")
     local infoContainer = Instance.new("Frame")
+    local TabRep = Instance.new("TextLabel")
 
     local blurFrame = Instance.new("Frame")
 
@@ -257,6 +258,16 @@ function Kavo.CreateLib(kavName, themeList)
     title.TextColor3 = Color3.fromRGB(245, 245, 245)
     title.TextSize = 20.000
     title.TextXAlignment = Enum.TextXAlignment.Center
+    
+    TabRep.Name = "letab"
+    TabRep.BackgroundTransparency = 1.000
+    TabRep.Position = UDim2.new(0.36, 0, 0, 0)
+    TabRep.Size = UDim2.new(0, 200, 0, 29)
+    TabRep.TextXAlignment = Enum.TextXAlignment.Left
+    TabRep.Font = Enum.Font.GothamBlack
+    TabRep.RichText = true
+    TabRep.TextColor3 = themeList.Header
+    Objects[TabRep] = "Header"
 
     close.Name = "close"
     close.Parent = MainHeader
@@ -397,7 +408,7 @@ function Kavo.CreateLib(kavName, themeList)
         pageListing.SortOrder = Enum.SortOrder.LayoutOrder
         pageListing.Padding = UDim.new(0, 5)
 
-        tabButton.Name = tabName.."TabButton"
+        tabButton.Name = tabName
         tabButton.Parent = tabFrames
         tabButton.BackgroundColor3 = themeList.SchemeColor
         Objects[tabButton] = "SchemeColor"
@@ -432,6 +443,7 @@ function Kavo.CreateLib(kavName, themeList)
             for i,v in next, Pages:GetChildren() do
                 v.Visible = false
             end
+	    TabRep.Name = tabButton.Name
             page.Visible = true
             for i,v in next, tabFrames:GetChildren() do
                 if v:IsA("TextButton") then
@@ -450,7 +462,7 @@ function Kavo.CreateLib(kavName, themeList)
             if themeList.SchemeColor == Color3.fromRGB(0,0,0) then
                 Utility:TweenObject(tabButton, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
             end 
-            Utility:TweenObject(tabButton, {BackgroundTransparency = 0}, 0.2)
+            Utility:TweenObject(tabButton, {BackgroundTransparency = 0.5}, 0.2)
         end)
         local Sections = {}
         local focusing = false

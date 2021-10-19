@@ -311,7 +311,7 @@ function Kavo.CreateLib(kavName, themeList)
     house.Size = UDim2.new(0.185, 0, 0.087, 0)
     house.Image = "rbxassetid://3926317768"
     house.ImageColor3 = themeList.SchemeColor
-    Objects[house] = "SchemeColor"
+    Objects[house] = "ImageColor3"
     house.ImageRectOffset = Vector2.new(605, 450)
     house.ImageRectSize = Vector2.new(80, 80)
     house.ImageTransparency = 0

@@ -239,6 +239,7 @@ function Kavo.CreateLib(kavName, themeList)
     MainHeader.Name = "MainHeader"
     MainHeader.Parent = Main
     MainHeader.BackgroundColor3 = themeList.Header
+    MainHeader.BackgroundTransparency = 1
     Objects[MainHeader] = "BackgroundColor3"
     MainHeader.Size = UDim2.new(0, 525, 0, 29)
     MainHeader.BorderSizePixel = 0

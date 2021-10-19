@@ -284,7 +284,7 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.BackgroundColor3 = themeList.Header
     Objects[MainSide] = "Header"
     MainSide.Position = UDim2.new(0.002, 0, 0.001, 0)
-    MainSide.Size = UDim2.new(0.28, 0, 0.995, 0)
+    MainSide.Size = UDim2.new(0.35, 0, 0.995, 0)
     MainSide.BorderSizePixel = 0
 
     coverup_2.Name = "coverup"
@@ -300,7 +300,7 @@ function Kavo.CreateLib(kavName, themeList)
     tabFrames.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     tabFrames.BackgroundTransparency = 1.000
     tabFrames.Position = UDim2.new(0, 0, 0.15, 0)
-    tabFrames.Size = UDim2.new(0, 148, 0, 269)
+    tabFrames.Size = UDim2.new(1, 0, 0, 269)
     
     house.Name = "house"
     house.Parent = MainSide

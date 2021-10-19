@@ -196,10 +196,12 @@ function Kavo.CreateLib(kavName, themeList)
     local Main = Instance.new("Frame")
     local MainCorner = Instance.new("UICorner")
     local MainHeader = Instance.new("Frame")
+    local headerCover = Instance.new("UICorner")
+    local coverup = Instance.new("Frame")
     local title = Instance.new("TextLabel")
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
-    local house = Instance.new("ImageLabel")
+    local sideCorner = Instance.new("UICorner")
     local coverup_2 = Instance.new("Frame")
     local tabFrames = Instance.new("Frame")
     local tabListing = Instance.new("UIListLayout")
@@ -241,21 +243,31 @@ function Kavo.CreateLib(kavName, themeList)
     MainHeader.BackgroundColor3 = themeList.Header
     Objects[MainHeader] = "BackgroundColor3"
     MainHeader.Size = UDim2.new(0, 525, 0, 29)
-    MainHeader.BorderSizePixel = 0
+    headerCover.CornerRadius = UDim.new(0, 4)
+    headerCover.Name = "headerCover"
+    headerCover.Parent = MainHeader
+
+    coverup.Name = "coverup"
+    coverup.Parent = MainHeader
+    coverup.BackgroundColor3 = themeList.Header
+    Objects[coverup] = "BackgroundColor3"
+    coverup.BorderSizePixel = 0
+    coverup.Position = UDim2.new(0, 0, 0.758620679, 0)
+    coverup.Size = UDim2.new(0, 525, 0, 7)
 
     title.Name = "title"
-    title.Parent = MainSide
+    title.Parent = MainHeader
     title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     title.BackgroundTransparency = 1.000
     title.BorderSizePixel = 0
-    title.Position = UDim2.new(0.075, 0, -0.087, 0)
-    title.Size = UDim2.new(0, 132, 0, 37)
-    title.Font = Enum.Font.GothamSemibold
+    title.Position = UDim2.new(0.0171428565, 0, 0.344827592, 0)
+    title.Size = UDim2.new(0, 204, 0, 8)
+    title.Font = Enum.Font.Gotham
     title.RichText = true
     title.Text = kavName
     title.TextColor3 = Color3.fromRGB(245, 245, 245)
-    title.TextSize = 20.000
-    title.TextXAlignment = Enum.TextXAlignment.Center
+    title.TextSize = 16.000
+    title.TextXAlignment = Enum.TextXAlignment.Left
 
     close.Name = "close"
     close.Parent = MainHeader
@@ -285,7 +297,10 @@ function Kavo.CreateLib(kavName, themeList)
     Objects[MainSide] = "Header"
     MainSide.Position = UDim2.new(-7.4505806e-09, 0, 0.0911949649, 0)
     MainSide.Size = UDim2.new(0, 149, 0, 289)
-    MainSide.BorderSizePixel = 0
+
+    sideCorner.CornerRadius = UDim.new(0, 4)
+    sideCorner.Name = "sideCorner"
+    sideCorner.Parent = MainSide
 
     coverup_2.Name = "coverup"
     coverup_2.Parent = MainSide
@@ -299,21 +314,8 @@ function Kavo.CreateLib(kavName, themeList)
     tabFrames.Parent = MainSide
     tabFrames.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     tabFrames.BackgroundTransparency = 1.000
-    tabFrames.Position = UDim2.new(0, 0, 0.069, 0)
-    tabFrames.Size = UDim2.new(0, 148, 0, 269)
-    
-    house.Name = "house"
-    house.Parent = MainSide
-    house.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    house.BackgroundTransparency = 1.000
-    house.BorderColor3 = Color3.fromRGB(27, 42, 53)
-    house.Position = UDim2.new(0.065, 3, 0.16, -22)
-    house.Size = UDim2.new(0.185, 0, 0.087, 0)
-    house.Image = "rbxassetid://3926317768"
-    house.ImageColor3 = Color3.fromRGB(255, 255, 255)
-    house.ImageRectOffset = Vector2.new(605, 450)
-    house.ImageRectSize = Vector2.new(80, 80)
-    house.ImageTransparency = 0
+    tabFrames.Position = UDim2.new(0.0438990258, 0, -0.00066378375, 0)
+    tabFrames.Size = UDim2.new(0, 135, 0, 283)
 
     tabListing.Name = "tabListing"
     tabListing.Parent = tabFrames
@@ -346,6 +348,7 @@ function Kavo.CreateLib(kavName, themeList)
             MainHeader.BackgroundColor3 = themeList.Header
             MainSide.BackgroundColor3 = themeList.Header
             coverup_2.BackgroundColor3 = themeList.Header
+            coverup.BackgroundColor3 = themeList.Header
         end
     end)()
 
@@ -369,6 +372,7 @@ function Kavo.CreateLib(kavName, themeList)
     function Tabs:NewTab(tabName)
         tabName = tabName or "Tab"
         local tabButton = Instance.new("TextButton")
+        local UICorner = Instance.new("UICorner")
         local page = Instance.new("ScrollingFrame")
         local pageListing = Instance.new("UIListLayout")
 
@@ -400,14 +404,13 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.Parent = tabFrames
         tabButton.BackgroundColor3 = themeList.SchemeColor
         Objects[tabButton] = "SchemeColor"
-        tabButton.Size = UDim2.new(1, 0, 0.140, 0)
+        tabButton.Size = UDim2.new(0, 135, 0, 28)
         tabButton.AutoButtonColor = false
-        tabButton.Font = Enum.Font.GothamSemibold
+        tabButton.Font = Enum.Font.Gotham
         tabButton.Text = tabName
         tabButton.TextColor3 = themeList.TextColor
         Objects[tabButton] = "TextColor3"
-        tabButton.TextSize = 17.000
-	tabButton.TextXAlignment = Enum.TextXAlignment.Left
+        tabButton.TextSize = 14.000
         tabButton.BackgroundTransparency = 1
 
         if first then
@@ -420,6 +423,8 @@ function Kavo.CreateLib(kavName, themeList)
             tabButton.BackgroundTransparency = 1
         end
 
+        UICorner.CornerRadius = UDim.new(0, 5)
+        UICorner.Parent = tabButton
         table.insert(Tabs, tabName)
 
         UpdateSize()

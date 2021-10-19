@@ -283,8 +283,8 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.Parent = Main
     MainSide.BackgroundColor3 = themeList.Header
     Objects[MainSide] = "Header"
-    MainSide.Position = UDim2.new(-7.4505806e-09, 0, 0.0911949649, 0)
-    MainSide.Size = UDim2.new(0, 149, 0, 289)
+    MainSide.Position = UDim2.new(0.002, 0, 0.001, 0)
+    MainSide.Size = UDim2.new(0.28, 0, 0.995, 0)
     MainSide.BorderSizePixel = 0
 
     coverup_2.Name = "coverup"
@@ -299,7 +299,7 @@ function Kavo.CreateLib(kavName, themeList)
     tabFrames.Parent = MainSide
     tabFrames.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     tabFrames.BackgroundTransparency = 1.000
-    tabFrames.Position = UDim2.new(0, 0, 0.069, 0)
+    tabFrames.Position = UDim2.new(0, 0, 0.15, 0)
     tabFrames.Size = UDim2.new(0, 148, 0, 269)
     
     house.Name = "house"
@@ -307,7 +307,7 @@ function Kavo.CreateLib(kavName, themeList)
     house.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     house.BackgroundTransparency = 1.000
     house.BorderColor3 = Color3.fromRGB(27, 42, 53)
-    house.Position = UDim2.new(0.065, 3, 0.16, -22)
+    house.Position = UDim2.new(0.065, 3, 0.16, 0)
     house.Size = UDim2.new(0.185, 0, 0.087, 0)
     house.Image = "rbxassetid://3926317768"
     house.ImageColor3 = Color3.fromRGB(255, 255, 255)

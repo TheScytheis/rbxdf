@@ -383,6 +383,7 @@ function Kavo.CreateLib(kavName, themeList)
     function Tabs:NewTab(tabName)
         tabName = tabName or "Tab"
         local tabButton = Instance.new("TextButton")
+	local tabNametag = Instance.new("TextLabel")
         local page = Instance.new("ScrollingFrame")
         local pageListing = Instance.new("UIListLayout")
 
@@ -417,12 +418,23 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.Size = UDim2.new(1, 0, 0.140, 0)
         tabButton.AutoButtonColor = false
         tabButton.Font = Enum.Font.GothamSemibold
-        tabButton.Text = tabName
+        tabButton.Text = ""
         tabButton.TextColor3 = themeList.TextColor
         Objects[tabButton] = "TextColor3"
         tabButton.TextSize = 17.000
 	tabButton.TextXAlignment = Enum.TextXAlignment.Left
         tabButton.BackgroundTransparency = 1
+	
+	tabNametag.Name = tabName
+	tabNametag.Parent = tabButton
+	tabNametag.BackgroundTransparency = 1
+	tabNametag.Position = UDim2.new(0.27,0,0,0)
+	tabNametag.Size = UDim2.new(0.73,0,1,0)
+	tabNametag.Font = Enum.Font.GothamSemibold
+	tabNametag.TextColor3 = themeList.TextColor
+        Objects[tabNametag] = "TextColor3"
+        tabNametag.TextSize = 17.000
+	tabNametag.TextXAlignment = Enum.TextXAlignment.Left
 
         if first then
 	    TabRep.Text = tabButton.Name
@@ -475,7 +487,7 @@ function Kavo.CreateLib(kavName, themeList)
             while wait() do
                 page.BackgroundColor3 = themeList.Background
                 page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
-                tabButton.TextColor3 = themeList.TextColor
+                tabNametag.TextColor3 = themeList.TextColor
                 tabButton.BackgroundColor3 = themeList.SchemeColor
             end
         end)()
@@ -569,7 +581,7 @@ function Kavo.CreateLib(kavName, themeList)
             while wait() do
                 sectionFrame.BackgroundColor3 = themeList.Background
                 sectionHead.BackgroundColor3 = themeList.SchemeColor
-                tabButton.TextColor3 = themeList.TextColor
+                tabNametag.TextColor3 = themeList.TextColor
                 tabButton.BackgroundColor3 = themeList.SchemeColor
                 sectionName.TextColor3 = themeList.TextColor
             end

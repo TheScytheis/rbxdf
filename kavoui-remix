@@ -240,6 +240,7 @@ function Kavo.CreateLib(kavName, themeList)
     MainHeader.BackgroundColor3 = themeList.Header
     Objects[MainHeader] = "BackgroundColor3"
     MainHeader.Size = UDim2.new(0, 525, 0, 29)
+    MainHeader.BorderSizePixel = 0
 
     title.Name = "title"
     title.Parent = MainSide
@@ -283,6 +284,7 @@ function Kavo.CreateLib(kavName, themeList)
     Objects[MainSide] = "Header"
     MainSide.Position = UDim2.new(-7.4505806e-09, 0, 0.0911949649, 0)
     MainSide.Size = UDim2.new(0, 149, 0, 289)
+    MainSide.BorderSizePixel = 0
 
     coverup_2.Name = "coverup"
     coverup_2.Parent = MainSide

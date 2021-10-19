@@ -425,7 +425,7 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.BackgroundTransparency = 1
 
         if first then
-	    TabRep.Text = tabName
+	    TabRep.Text = tabButton.Name
             first = false
             page.Visible = true
             tabButton.BackgroundTransparency = 0

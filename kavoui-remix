@@ -372,7 +372,6 @@ function Kavo.CreateLib(kavName, themeList)
     function Tabs:NewTab(tabName)
         tabName = tabName or "Tab"
         local tabButton = Instance.new("TextButton")
-        local UICorner = Instance.new("UICorner")
         local page = Instance.new("ScrollingFrame")
         local pageListing = Instance.new("UIListLayout")
 
@@ -404,7 +403,7 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.Parent = tabFrames
         tabButton.BackgroundColor3 = themeList.SchemeColor
         Objects[tabButton] = "SchemeColor"
-        tabButton.Size = UDim2.new(0, 135, 0, 28)
+        tabButton.Size = UDim2.new(1, 0, 0.140, 0)
         tabButton.AutoButtonColor = false
         tabButton.Font = Enum.Font.Gotham
         tabButton.Text = tabName
@@ -423,8 +422,6 @@ function Kavo.CreateLib(kavName, themeList)
             tabButton.BackgroundTransparency = 1
         end
 
-        UICorner.CornerRadius = UDim.new(0, 5)
-        UICorner.Parent = tabButton
         table.insert(Tabs, tabName)
 
         UpdateSize()

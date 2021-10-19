@@ -265,6 +265,7 @@ function Kavo.CreateLib(kavName, themeList)
     TabRep.Position = UDim2.new(0.36, 0, 0, 0)
     TabRep.Size = UDim2.new(0, 200, 0, 29)
     TabRep.TextXAlignment = Enum.TextXAlignment.Left
+    TabRep.TextSize = 17
     TabRep.Font = Enum.Font.GothamBlack
     TabRep.RichText = true
     TabRep.TextColor3 = themeList.Header

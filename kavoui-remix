@@ -197,7 +197,6 @@ function Kavo.CreateLib(kavName, themeList)
     local MainCorner = Instance.new("UICorner")
     local MainHeader = Instance.new("Frame")
     local headerCover = Instance.new("UICorner")
-    local coverup = Instance.new("Frame")
     local title = Instance.new("TextLabel")
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
@@ -247,26 +246,18 @@ function Kavo.CreateLib(kavName, themeList)
     headerCover.Name = "headerCover"
     headerCover.Parent = MainHeader
 
-    coverup.Name = "coverup"
-    coverup.Parent = MainHeader
-    coverup.BackgroundColor3 = themeList.Header
-    Objects[coverup] = "BackgroundColor3"
-    coverup.BorderSizePixel = 0
-    coverup.Position = UDim2.new(0, 0, 0.758620679, 0)
-    coverup.Size = UDim2.new(0, 525, 0, 7)
-
     title.Name = "title"
-    title.Parent = MainHeader
+    title.Parent = MainSide
     title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     title.BackgroundTransparency = 1.000
     title.BorderSizePixel = 0
-    title.Position = UDim2.new(0.0171428565, 0, 0.344827592, 0)
+    title.Position = UDim2.new(0.075, 0, -0.087, 0)
     title.Size = UDim2.new(0, 204, 0, 8)
-    title.Font = Enum.Font.Gotham
+    title.Font = Enum.Font.GothamSemibold
     title.RichText = true
     title.Text = kavName
     title.TextColor3 = Color3.fromRGB(245, 245, 245)
-    title.TextSize = 16.000
+    title.TextSize = 20.000
     title.TextXAlignment = Enum.TextXAlignment.Left
 
     close.Name = "close"
@@ -348,7 +339,6 @@ function Kavo.CreateLib(kavName, themeList)
             MainHeader.BackgroundColor3 = themeList.Header
             MainSide.BackgroundColor3 = themeList.Header
             coverup_2.BackgroundColor3 = themeList.Header
-            coverup.BackgroundColor3 = themeList.Header
         end
     end)()
 

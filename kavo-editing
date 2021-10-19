@@ -260,6 +260,7 @@ function Kavo.CreateLib(kavName, themeList)
     title.TextXAlignment = Enum.TextXAlignment.Center
     
     TabRep.Name = "letab"
+    TabRep.Parent = MainHeader
     TabRep.BackgroundTransparency = 1.000
     TabRep.Position = UDim2.new(0.36, 0, 0, 0)
     TabRep.Size = UDim2.new(0, 200, 0, 29)

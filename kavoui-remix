@@ -199,7 +199,6 @@ function Kavo.CreateLib(kavName, themeList)
     local title = Instance.new("TextLabel")
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
-    local sideCorner = Instance.new("UICorner")
     local coverup_2 = Instance.new("Frame")
     local tabFrames = Instance.new("Frame")
     local tabListing = Instance.new("UIListLayout")
@@ -284,10 +283,6 @@ function Kavo.CreateLib(kavName, themeList)
     Objects[MainSide] = "Header"
     MainSide.Position = UDim2.new(-7.4505806e-09, 0, 0.0911949649, 0)
     MainSide.Size = UDim2.new(0, 149, 0, 289)
-
-    sideCorner.CornerRadius = UDim.new(0, 4)
-    sideCorner.Name = "sideCorner"
-    sideCorner.Parent = MainSide
 
     coverup_2.Name = "coverup"
     coverup_2.Parent = MainSide

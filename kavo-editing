@@ -426,6 +426,7 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.BackgroundTransparency = 1
 	
 	tabNametag.Name = tabName
+	tabNametag.Text = tabName
 	tabNametag.Parent = tabButton
 	tabNametag.BackgroundTransparency = 1
 	tabNametag.Position = UDim2.new(0.27,0,0,0)

@@ -199,6 +199,7 @@ function Kavo.CreateLib(kavName, themeList)
     local title = Instance.new("TextLabel")
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
+    local house = Instance.new("ImageLabel")
     local coverup_2 = Instance.new("Frame")
     local tabFrames = Instance.new("Frame")
     local tabListing = Instance.new("UIListLayout")
@@ -300,6 +301,20 @@ function Kavo.CreateLib(kavName, themeList)
     tabFrames.BackgroundTransparency = 1.000
     tabFrames.Position = UDim2.new(0, 0, 0.069, 0)
     tabFrames.Size = UDim2.new(0, 148, 0, 269)
+    
+    house.Name = "house"
+    house.Parent = MainSide
+    house.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    house.BackgroundTransparency = 1.000
+    house.BorderColor3 = Color3.fromRGB(27, 42, 53)
+    house.Position = UDim2.new(0.065, 3, 0.16, -22)
+    house.Size = UDim2.new(0.185, 0, 0.087, 0)
+    house.Image = "rbxassetid://3926317768"
+    house.ImageColor3 = themeList.SchemeColor
+    Objects[house] = "SchemeColor"
+    house.ImageRectOffset = Vector2.new(605, 450)
+    house.ImageRectSize = Vector2.new(80, 80)
+    house.ImageTransparency = 0
 
     tabListing.Name = "tabListing"
     tabListing.Parent = tabFrames

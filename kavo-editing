@@ -308,7 +308,7 @@ function Kavo.CreateLib(kavName, themeList)
     house.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     house.BackgroundTransparency = 1.000
     house.BorderColor3 = Color3.fromRGB(27, 42, 53)
-    house.Position = UDim2.new(0.045, 3, 0.140, 0)
+    house.Position = UDim2.new(0.045, 3, 0.145, 0)
     house.Size = UDim2.new(0.14, 0, 0.077, 0)
     house.Image = "rbxassetid://3926317768"
     house.ImageColor3 = Color3.fromRGB(255, 255, 255)

@@ -252,7 +252,7 @@ function Kavo.CreateLib(kavName, themeList)
     title.BackgroundTransparency = 1.000
     title.BorderSizePixel = 0
     title.Position = UDim2.new(0.075, 0, -0.087, 0)
-    title.Size = UDim2.new(0, 204, 0, 8)
+    title.Size = UDim2.new(0, 132, 0, 37)
     title.Font = Enum.Font.GothamSemibold
     title.RichText = true
     title.Text = kavName

@@ -325,7 +325,7 @@ function Kavo.CreateLib(kavName, themeList)
     pages.BackgroundTransparency = 1.000
     pages.BorderSizePixel = 0
     pages.Position = UDim2.new(0.366, 0, 0.123, 0)
-    pages.Size = UDim2.new(0, 325, 0, 269)
+    pages.Size = UDim2.new(0, 331, 0, 280)
 
     Pages.Name = "Pages"
     Pages.Parent = pages

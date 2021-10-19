@@ -424,6 +424,7 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.BackgroundTransparency = 1
 
         if first then
+	    TabRep.Text = tabName
             first = false
             page.Visible = true
             tabButton.BackgroundTransparency = 0
@@ -444,7 +445,7 @@ function Kavo.CreateLib(kavName, themeList)
             for i,v in next, Pages:GetChildren() do
                 v.Visible = false
             end
-	    TabRep.Name = tabButton.Name
+	    TabRep.Text = tabButton.Name
             page.Visible = true
             for i,v in next, tabFrames:GetChildren() do
                 if v:IsA("TextButton") then

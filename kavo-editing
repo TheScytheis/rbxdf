@@ -2429,12 +2429,12 @@ function Kavo.CreateLib(kavName, themeList)
             
                 for i,v in next, list do
                     Elements:NewDToggle(v,dropFrame, function(value)
-                        if not table.find(letable, v) then
-                            table.insert(letable, v)
-                        else
-                            letable[v] = nil
-                        end
-                    end)
+            		if not table.find(letable, value) then
+                		table.insert(letable, value)
+            		else
+                		letable[value] = nil
+            		end
+        	    end)
                 end
             
                 function DropFunction:RefreshTD(newList)

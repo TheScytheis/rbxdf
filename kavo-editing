@@ -2111,32 +2111,9 @@ function Kavo.CreateLib(kavName, themeList)
                         toggleDisabled.ImageColor3 = themeList.SchemeColor
                         toggleEnabled.ImageColor3 = themeList.SchemeColor
                         togName.TextColor3 = themeList.TextColor
-                        viewInfo.ImageColor3 = themeList.SchemeColor
                         Sample.ImageColor3 = themeList.SchemeColor
-                        moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
-                        moreInfo.TextColor3 = themeList.TextColor
                     end
                 end)()
-                viewInfo.MouseButton1Click:Connect(function()
-                    if not viewDe then
-                        viewDe = true
-                        focusing = true
-                        for i,v in next, infoContainer:GetChildren() do
-                            if v ~= moreInfo then
-                                Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                            end
-                        end
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,0,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 0.5}, 0.2)
-                        Utility:TweenObject(btn, {BackgroundColor3 = themeList.ElementColor}, 0.2)
-                        wait(1.5)
-                        focusing = false
-                        Utility:TweenObject(moreInfo, {Position = UDim2.new(0,0,2,0)}, 0.2)
-                        Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
-                        wait(0)
-                        viewDe = false
-                    end
-                end)
                 function TogFunction:UpdateDToggle(newText, isTogOn)
                     isTogOn = isTogOn or toggle
                     if newText ~= nil then 

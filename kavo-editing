@@ -2112,7 +2112,7 @@ function Kavo.CreateLib(kavName, themeList)
                 return DTogFunction
         end
 	    
-	    function Elements:NewTDropdown(dropname, dropinf, list, letable, callback)
+	    function Elements:NewTDropdown(dropname, dropinf, list, letable, search, callback)
                 local DropFunction = {}
                 dropname = dropname or "Dropdown"
                 list = list or {}
@@ -2127,10 +2127,14 @@ function Kavo.CreateLib(kavName, themeList)
                 local dropOpen = Instance.new("TextButton")
                 local listImg = Instance.new("ImageLabel")
                 local itemTextbox = Instance.new("TextLabel")
-                local viewInfo = Instance.new("ImageButton")
                 local UICorner = Instance.new("UICorner")
                 local UIListLayout = Instance.new("UIListLayout")
                 local Sample = Instance.new("ImageLabel")
+                local searchframe = Instance.new("Frame")
+                local searchbtn = Instance.new("ImageButton")
+                local SUICorner = Instance.new("UICorner")
+                local STUICorner = Instance.new("UICorner")
+                local STextBox = Instance.new("TextBox")
             
                 local ms = game.Players.LocalPlayer:GetMouse()
                 Sample.Name = "Sample"
@@ -2244,17 +2248,62 @@ function Kavo.CreateLib(kavName, themeList)
                 itemTextbox.TextSize = 14.000
                 itemTextbox.TextXAlignment = Enum.TextXAlignment.Left
             
-                viewInfo.Name = "viewInfo"
-                viewInfo.Parent = dropOpen
-                viewInfo.BackgroundTransparency = 1.000
-                viewInfo.LayoutOrder = 9
-                viewInfo.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
-                viewInfo.Size = UDim2.new(0, 23, 0, 23)
-                viewInfo.ZIndex = 2
-                viewInfo.Image = "rbxassetid://3926305904"
-                viewInfo.ImageColor3 = themeList.SchemeColor
-                viewInfo.ImageRectOffset = Vector2.new(764, 764)
-                viewInfo.ImageRectSize = Vector2.new(36, 36)
+
+                if search == true then
+                    searchframe.Name = "SearchFr"
+                    searchframe.Parent = dropOpen
+                    searchframe.BackgroundTransparency = 1.000
+                    searchframe.BackgroundColor3 = themeList.Header
+                    searchframe.Position = UDim2.new(0.900000007, 0, 0.151999995, 0)
+                    searchframe.Size = UDim2.new(0, 23, 0, 23)
+                    searchframe.ZIndex = 2
+                    searchbtn.Name = "viewInfo"
+                    searchbtn.Parent = dropOpen
+                    searchbtn.BackgroundTransparency = 1.000
+                    searchbtn.LayoutOrder = 9
+                    searchbtn.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
+                    searchbtn.Size = UDim2.new(0, 23, 0, 23)
+                    searchbtn.ZIndex = 2
+                    searchbtn.Image = "rbxassetid://7787658892"
+                    searchbtn.ImageColor3 = themeList.SchemeColor
+
+                    STextBox.Parent = searchframe
+                    STextBox.BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 - 6, themeList.ElementColor.g * 255 - 6, themeList.ElementColor.b * 255 - 7)
+                    STextBox.BorderSizePixel = 0
+                    STextBox.ClipsDescendants = true
+                    STextBox.Position = UDim2.new(0, 0, 0.040999995, 0)
+                    STextBox.Size = UDim2.new(0, 65, 0, 23)
+                    STextBox.ZIndex = 99
+                    STextBox.ClearTextOnFocus = false
+                    STextBox.Font = Enum.Font.Gotham
+                    STextBox.PlaceholderColor3 = themeList.SchemeColor
+                    STextBox.PlaceholderText = "Search!"
+                    STextBox.Text = ""
+                    STextBox.TextColor3 = themeList.SchemeColor
+                    STextBox.TextSize = 14.000
+                    STextBox.Visible = false
+
+                    SUICorner.CornerRadius = UDim.new(0, 4)
+                    SUICorner.Parent = STextBox
+
+                    local shovering = false
+                    searchbtn.MouseEnter:Connect(function()
+                        if not focusing then
+                            game.TweenService:Create(searchbtn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+                                BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 + 8, themeList.ElementColor.g * 255 + 9, themeList.ElementColor.b * 255 + 10)
+                            }):Play()
+                            shovering = true
+                        end 
+                    end)
+                    searchbtn.MouseLeave:Connect(function()
+                        if not focusing then
+                            game.TweenService:Create(searchbtn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+                                BackgroundColor3 = themeList.ElementColor
+                            }):Play()
+                            shovering = false
+                        end
+                    end)
+                end
             
                 UICorner.CornerRadius = UDim.new(0, 4)
                 UICorner.Parent = dropOpen
@@ -2324,7 +2373,7 @@ function Kavo.CreateLib(kavName, themeList)
                         dropFrame.BackgroundColor3 = themeList.Background
                         listImg.ImageColor3 = themeList.SchemeColor
                         itemTextbox.TextColor3 = themeList.TextColor
-                        viewInfo.ImageColor3 = themeList.SchemeColor
+                        searchbtn.ImageColor3 = themeList.SchemeColor
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
                         moreInfo.TextColor3 = themeList.TextColor
                     end
@@ -2339,7 +2388,38 @@ function Kavo.CreateLib(kavName, themeList)
                     Utility:TweenObject(moreInfo, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
                 end 
             
-                viewInfo.MouseButton1Click:Connect(function()
+                local searching = false
+                searchbtn.MouseButton1Click:Connect(function()
+                    if searching then
+                        searching = false
+                        searchframe:TweenSize(UDim2.new(0, 23, 0, 23), "InOut", "Linear", 0.08, true)
+                        STextBox.Visible = false
+                    else
+                        searching = true
+                        searchframe:TweenSize(UDim2.new(0, -63, 0, 23), "InOut", "Linear", 0.08, true)
+                        STextBox.Visible = true
+
+                    end
+                end)
+                coroutine.wrap(function()
+                    while wait() do
+                        if searching then
+                            local searchForItem = string.lower(STextBox.Text)
+                            for k, v in next, dropFrame:GetChildren() do
+                                if v:FindFirstChild("togName") then
+                                    if string.match(v.togName.Text:lower(), searchForItem) then
+                                        print("yeeha")
+                                        v.Visible = true
+                                    else
+                                        print("naaha")
+                                        v.Visible = false
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end)()
+                --[[searchbtn.MouseButton1Click:Connect(function()
                     if not viewDe then
                         viewDe = true
                         focusing = true
@@ -2358,8 +2438,8 @@ function Kavo.CreateLib(kavName, themeList)
                         wait(0)
                         viewDe = false
                     end
-                end)     
-            
+                end)]]
+
                 for i,v in next, list do
                     Elements:NewDToggle(v,dropFrame, function(value)
             		if not table.find(letable, v) then

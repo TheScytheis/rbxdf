@@ -338,6 +338,7 @@ function Kavo.CreateLib(kavName, themeList)
     easyhub.Position = UDim2.new(-0.08, 0, -0.045, 0)
     easyhub.Size = UDim2.new(0.44, 0, 0.0249, 0)
     easyhub.Image = "rbxassetid://7786259244"
+    eashub.ScaleType = Enum.ScaleType.Crop
 
     tabListing.Name = "tabListing"
     tabListing.Parent = tabFrames

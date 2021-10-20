@@ -325,7 +325,7 @@ function Kavo.CreateLib(kavName, themeList)
     house.Image = "rbxassetid://3926317768"
     house.ImageColor3 = Color3.fromRGB(255, 255, 255)
     house.ImageRectOffset = Vector2.new(605, 450)
-    house.ImageRectSize = Vector2.new(80, 80)
+    house.ImageRectSize = Vector2.new(85, 85)
     house.ImageTransparency = 0
 
     tabListing.Name = "tabListing"

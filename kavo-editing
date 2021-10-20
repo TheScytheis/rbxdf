@@ -200,6 +200,7 @@ function Kavo.CreateLib(kavName, themeList)
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
     local house = Instance.new("ImageLabel")
+    local easyhub = Instance.new("ImageLabel")
     local coverup_2 = Instance.new("Frame")
     local tabFrames = Instance.new("Frame")
     local tabListing = Instance.new("UIListLayout")
@@ -320,13 +321,23 @@ function Kavo.CreateLib(kavName, themeList)
     house.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     house.BackgroundTransparency = 1.000
     house.BorderColor3 = Color3.fromRGB(27, 42, 53)
-    house.Position = UDim2.new(0.085, 0, 0.170, 0)
+    house.Position = UDim2.new(0.085, 0, 0.165, 0)
     house.Size = UDim2.new(0.12, 0, 0.07, 0)
     house.Image = "rbxassetid://3926317768"
     house.ImageColor3 = Color3.fromRGB(255, 255, 255)
     house.ImageRectOffset = Vector2.new(605, 450)
     house.ImageRectSize = Vector2.new(80, 80)
     house.ImageTransparency = 0
+    
+    
+    
+    easyhub.Name = "easylogo"
+    easyhub.Parent = MainSide
+    easyhub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    easyhub.BackgroundTransparency = 1.000
+    easyhub.Position = UDim2.new(0.085, 0, 0.07, 0)
+    easyhub.Size = UDim2.new(0.12, 0, 0.07, 0)
+    easyhub.Image = "rbxassetid://7033572594"
 
     tabListing.Name = "tabListing"
     tabListing.Parent = tabFrames

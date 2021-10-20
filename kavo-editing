@@ -2035,9 +2035,9 @@ function Kavo.CreateLib(kavName, themeList)
                 btn.MouseButton1Click:Connect(function()
                     if not focusing then
                         if toggled == false then
-                            ImageTransparency = 0
+                            img.ImageTransparency = 0
                         else
-                            ImageTransparency = 1
+                            img.ImageTransparency = 1
                         end
                         toggled = not toggled
                         pcall(callback, toggled)

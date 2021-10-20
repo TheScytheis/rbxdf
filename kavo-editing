@@ -337,7 +337,7 @@ function Kavo.CreateLib(kavName, themeList)
     easyhub.BackgroundTransparency = 1.000
     easyhub.Position = UDim2.new(0.085, 0, 0.045, 0)
     easyhub.Size = UDim2.new(0.12, 0, 0.07, 0)
-    easyhub.Image = "rbxassetid://7784803891"
+    easyhub.Image = "rbxassetid://7786259244"
 
     tabListing.Name = "tabListing"
     tabListing.Parent = tabFrames

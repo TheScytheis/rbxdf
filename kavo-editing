@@ -2036,6 +2036,7 @@ function Kavo.CreateLib(kavName, themeList)
                     if not focusing then
                         if toggled == false then
                             ImageTransparency = 0
+			    spawn(function()
                             local c = sample:Clone()
                             c.Parent = btn
                             local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
@@ -2052,8 +2053,10 @@ function Kavo.CreateLib(kavName, themeList)
                                 wait(len / 12)
                             end
                             c:Destroy()
+			    end)
                         else
                             ImageTransparency = 1
+			    spawn(function()
                             local c = sample:Clone()
                             c.Parent = btn
                             local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
@@ -2073,6 +2076,7 @@ function Kavo.CreateLib(kavName, themeList)
                         end
                         toggled = not toggled
                         pcall(callback, toggled)
+			end)
                     else
                         for i,v in next, infoContainer:GetChildren() do
                             Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)

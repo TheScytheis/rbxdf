@@ -262,11 +262,11 @@ function Kavo.CreateLib(kavName, themeList)
     TabRep.Name = "letab"
     TabRep.Parent = MainHeader
     TabRep.BackgroundTransparency = 1.000
-    TabRep.Position = UDim2.new(0.36, 0, 0, 0)
+    TabRep.Position = UDim2.new(0.335, 0, 0, 0)
     TabRep.Size = UDim2.new(0, 200, 0, 29)
     TabRep.TextXAlignment = Enum.TextXAlignment.Left
     TabRep.TextSize = 17
-    TabRep.Font = Enum.Font.GothamBlack
+    TabRep.Font = Enum.Font.GothamSemibold
     TabRep.RichText = true
     TabRep.TextColor3 = themeList.Header
     Objects[TabRep] = "Header"
@@ -298,7 +298,7 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.BackgroundColor3 = themeList.Header
     Objects[MainSide] = "Header"
     MainSide.Position = UDim2.new(-0.001, 0, 0, 0)
-    MainSide.Size = UDim2.new(0.35, 0, 0.999, 0)
+    MainSide.Size = UDim2.new(0.325, 0, 0.999, 0)
     MainSide.BorderSizePixel = 0
 
     coverup_2.Name = "coverup"
@@ -335,9 +335,9 @@ function Kavo.CreateLib(kavName, themeList)
     easyhub.Parent = MainSide
     easyhub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     easyhub.BackgroundTransparency = 1.000
-    easyhub.Position = UDim2.new(0.085, 0, 0.07, 0)
+    easyhub.Position = UDim2.new(0.085, 0, 0.045, 0)
     easyhub.Size = UDim2.new(0.12, 0, 0.07, 0)
-    easyhub.Image = "rbxassetid://7033572594"
+    easyhub.Image = "rbxassetid://7784803891"
 
     tabListing.Name = "tabListing"
     tabListing.Parent = tabFrames
@@ -348,7 +348,7 @@ function Kavo.CreateLib(kavName, themeList)
     pages.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     pages.BackgroundTransparency = 1.000
     pages.BorderSizePixel = 0
-    pages.Position = UDim2.new(0.366, 0, 0.123, 0)
+    pages.Position = UDim2.new(0.341, 0, 0.123, 0)
     pages.Size = UDim2.new(0, 360, 0, 280)
 
     Pages.Name = "Pages"
@@ -448,7 +448,7 @@ function Kavo.CreateLib(kavName, themeList)
 	tabNametag.TextXAlignment = Enum.TextXAlignment.Left
 
         if first then
-	    TabRep.Text = tabButton.Name
+	    TabRep.Text = tabButton.Name.." Tab"
             first = false
             page.Visible = true
             tabButton.BackgroundTransparency = 0
@@ -469,7 +469,7 @@ function Kavo.CreateLib(kavName, themeList)
             for i,v in next, Pages:GetChildren() do
                 v.Visible = false
             end
-	    TabRep.Text = tabButton.Name
+	    TabRep.Text = tabButton.Name.." Tab"
             page.Visible = true
             for i,v in next, tabFrames:GetChildren() do
                 if v:IsA("TextButton") then

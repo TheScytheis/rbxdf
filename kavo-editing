@@ -139,13 +139,6 @@ end)
 
 getgenv().LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
 
-function Kavo:ToggleUI()
-    if game.CoreGui[getgenv().LibName].Enabled then
-        game.CoreGui[getgenv().LibName].Enabled = false
-    else
-        game.CoreGui[getgenv().LibName].Enabled = true
-    end
-end
 
 function Kavo.CreateLib(kavName, themeList)
     if not themeList then
@@ -363,6 +356,21 @@ function Kavo.CreateLib(kavName, themeList)
     infoContainer.ClipsDescendants = true
     infoContainer.Position = UDim2.new(0.299047619, 0, 0.874213815, 0)
     infoContainer.Size = UDim2.new(0, 368, 0, 33)
+
+    function Kavo:ToggleUI()
+        if game.CoreGui[getgenv().LibName].Enabled then
+            game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+                Size = UDim2.new(0,0,0,0)
+            }):Play()
+            repeat wait() until Main.Size == UDim2.new(0,0,0,0)
+            game.CoreGui[getgenv().LibName].Enabled = false
+        else
+            game.CoreGui[getgenv().LibName].Enabled = true
+            game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+                Size = UDim2.new(0, 575, 0, 330)
+            }):Play()
+        end
+    end
 
     
     coroutine.wrap(function()

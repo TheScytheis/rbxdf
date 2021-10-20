@@ -2036,8 +2036,9 @@ function Kavo.CreateLib(kavName, themeList)
                     if not focusing then
                         if toggled == false then
                             ImageTransparency = 0
-			    spawn(function()
+			    
                             local c = sample:Clone()
+			    spawn(function(c)
                             c.Parent = btn
                             local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
                             c.Position = UDim2.new(0, x, 0, y)
@@ -2056,8 +2057,9 @@ function Kavo.CreateLib(kavName, themeList)
 			    end)
                         else
                             ImageTransparency = 1
-			    spawn(function()
+			    
                             local c = sample:Clone()
+			    spawn(function(c)
                             c.Parent = btn
                             local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
                             c.Position = UDim2.new(0, x, 0, y)

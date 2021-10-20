@@ -1651,6 +1651,8 @@ function Kavo.CreateLib(kavName, themeList)
                 Sample.ImageTransparency = 0.600
 
                 UIListLayout.Parent = dropFrame
+                UIListLayout.FillDirection = Enum.FillDirection.Vertical
+                UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
                 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
                 UIListLayout.Padding = UDim.new(0, 3)
 
@@ -1759,7 +1761,7 @@ function Kavo.CreateLib(kavName, themeList)
                     optionSelect.Parent = dropFrame
                     optionSelect.BackgroundColor3 = themeList.ElementColor
                     optionSelect.Position = UDim2.new(0, 0, 0.235294119, 0)
-                    optionSelect.Size = UDim2.new(0, 352, 0, 33)
+                    optionSelect.Size = UDim2.new(0, 350, 0, 33)
                     optionSelect.AutoButtonColor = false
                     optionSelect.Font = Enum.Font.GothamSemibold
                     optionSelect.Text = "  "..v
@@ -1858,7 +1860,7 @@ function Kavo.CreateLib(kavName, themeList)
                         optionSelect.Parent = dropFrame
                         optionSelect.BackgroundColor3 = themeList.ElementColor
                         optionSelect.Position = UDim2.new(0, 0, 0.235294119, 0)
-                        optionSelect.Size = UDim2.new(0, 352, 0, 33)
+                        optionSelect.Size = UDim2.new(0, 350, 0, 33)
                         optionSelect.AutoButtonColor = false
                         optionSelect.Font = Enum.Font.GothamSemibold
                         optionSelect.Text = "  "..v
@@ -1964,7 +1966,8 @@ function Kavo.CreateLib(kavName, themeList)
                 toggleElement.Parent = Drop
                 toggleElement.BackgroundColor3 = themeList.ElementColor
                 toggleElement.ClipsDescendants = true
-                toggleElement.Size = UDim2.new(0, 352, 0, 33)
+                toggleElement.Size = UDim2.new(0, 350, 0, 33)
+                toggleElement.Position = UDim2.new(0.015, 0, 0, 0)
                 toggleElement.AutoButtonColor = false
                 toggleElement.Font = Enum.Font.SourceSans
                 toggleElement.Text = ""
@@ -2001,7 +2004,7 @@ function Kavo.CreateLib(kavName, themeList)
                 togName.Parent = toggleElement
                 togName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 togName.BackgroundTransparency = 1.000
-                togName.Position = UDim2.new(0.096704483, 0, 0.272727281, 0)
+                togName.Position = UDim2.new(0.098, 0, 0.272727281, 0)
                 togName.Size = UDim2.new(0, 288, 0, 14)
                 togName.Font = Enum.Font.GothamSemibold
                 togName.Text = tname
@@ -2145,6 +2148,9 @@ function Kavo.CreateLib(kavName, themeList)
                 dropFrame.Position = UDim2.new(0, 0, 1.23571432, 0)
                 dropFrame.Size = UDim2.new(0, 352, 0, 33)
                 dropFrame.ClipsDescendants = true
+
+
+
                 local sample = Sample
                 local btn = dropOpen
                 dropOpen.Name = "dropOpen"
@@ -2264,6 +2270,8 @@ function Kavo.CreateLib(kavName, themeList)
                 Sample.ImageTransparency = 0.600
             
                 UIListLayout.Parent = dropFrame
+                UIListLayout.FillDirection = Enum.FillDirection.Vertical
+                UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
                 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
                 UIListLayout.Padding = UDim.new(0, 3)
             

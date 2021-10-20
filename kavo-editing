@@ -512,7 +512,6 @@ function Kavo.CreateLib(kavName, themeList)
             local sectionFrame = Instance.new("Frame")
             local sectionlistoknvm = Instance.new("UIListLayout")
             local sectionHead = Instance.new("Frame")
-            local sHeadCorner = Instance.new("UICorner")
             local sectionName = Instance.new("TextLabel")
             local sectionInners = Instance.new("Frame")
             local sectionElListing = Instance.new("UIListLayout")
@@ -548,13 +547,11 @@ function Kavo.CreateLib(kavName, themeList)
             end
             sectionHead.Name = "sectionHead"
             sectionHead.Parent = sectionFrame
-            sectionHead.BackgroundColor3 = themeList.SchemeColor
-            Objects[sectionHead] = "BackgroundColor3"
+            sectionHead.BackgroundColor3 = themeList.Background
+            sectionHead.BorderColor3 = themeList.SchemeColor
+            sectionHead.BorderSizePixel = 2
+            Objects[sectionHead] = "BorderColor3"
             sectionHead.Size = UDim2.new(0, 352, 0, 33)
-
-            sHeadCorner.CornerRadius = UDim.new(0, 4)
-            sHeadCorner.Name = "sHeadCorner"
-            sHeadCorner.Parent = sectionHead
 
             sectionName.Name = "sectionName"
             sectionName.Parent = sectionHead

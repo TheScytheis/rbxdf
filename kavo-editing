@@ -2381,10 +2381,14 @@ function Kavo.CreateLib(kavName, themeList)
             
                 for i,v in next, list do
                     Elements:NewDToggle(v,dropFrame, function(value)
-            		if not table.find(letable, value) then
-                		table.insert(letable, value)
+            		if not table.find(letable, v) then
+                		table.insert(letable, v)
             		else
-                		letable[value] = nil
+                		for ind,val in pairs(letable) do
+				   if val == v then
+				   	table.remove(letable, ind)
+				   end
+				end
             		end
         	    end)
                 end

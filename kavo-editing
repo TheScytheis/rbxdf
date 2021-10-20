@@ -2035,9 +2035,7 @@ function Kavo.CreateLib(kavName, themeList)
                 btn.MouseButton1Click:Connect(function()
                     if not focusing then
                         if toggled == false then
-                            game.TweenService:Create(img, TweenInfo.new(0.11, Enum.EasingStyle.Linear,Enum.EasingDirection.In), {
-                                ImageTransparency = 0
-                            }):Play()
+                            ImageTransparency = 0
                             local c = sample:Clone()
                             c.Parent = btn
                             local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)
@@ -2055,9 +2053,7 @@ function Kavo.CreateLib(kavName, themeList)
                             end
                             c:Destroy()
                         else
-                            game.TweenService:Create(img, TweenInfo.new(0.11, Enum.EasingStyle.Linear,Enum.EasingDirection.In), {
-                                ImageTransparency = 1
-                            }):Play()
+                            ImageTransparency = 1
                             local c = sample:Clone()
                             c.Parent = btn
                             local x, y = (ms.X - c.AbsolutePosition.X), (ms.Y - c.AbsolutePosition.Y)

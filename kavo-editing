@@ -452,7 +452,7 @@ function Kavo.CreateLib(kavName, themeList)
 	    TabRep.Text = tabButton.Name.." Tab"
             first = false
             page.Visible = true
-            tabButton.BackgroundTransparency = 0
+            tabButton.BackgroundTransparency = 0.7
             UpdateSize()
         else
             page.Visible = false

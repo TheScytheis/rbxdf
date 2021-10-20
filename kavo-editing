@@ -547,9 +547,10 @@ function Kavo.CreateLib(kavName, themeList)
             end
             sectionHead.Name = "sectionHead"
             sectionHead.Parent = sectionFrame
-            sectionHead.BackgroundColor3 = themeList.Background
+            sectionHead.BackgroundColor3 = themeList.Header
             sectionHead.BorderColor3 = themeList.SchemeColor
             sectionHead.BorderSizePixel = 2
+            sectionHead.BorderMode = Enum.BorderMode.Inset
             Objects[sectionHead] = "BorderColor3"
             sectionHead.Size = UDim2.new(0, 352, 0, 33)
 
@@ -589,7 +590,7 @@ function Kavo.CreateLib(kavName, themeList)
         coroutine.wrap(function()
             while wait() do
                 sectionFrame.BackgroundColor3 = themeList.Background
-                sectionHead.BackgroundColor3 = themeList.SchemeColor
+                sectionHead.BorderColor3 = themeList.SchemeColor
                 tabNametag.TextColor3 = themeList.TextColor
                 tabButton.BackgroundColor3 = themeList.SchemeColor
                 sectionName.TextColor3 = themeList.TextColor

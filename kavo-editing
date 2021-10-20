@@ -2073,10 +2073,10 @@ function Kavo.CreateLib(kavName, themeList)
                                 wait(len / 12)
                             end
                             c:Destroy()
+			    end)
                         end
                         toggled = not toggled
                         pcall(callback, toggled)
-			end)
                     else
                         for i,v in next, infoContainer:GetChildren() do
                             Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)

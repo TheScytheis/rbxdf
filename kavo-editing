@@ -294,6 +294,19 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.Size = UDim2.new(0.325, 0, 0.999, 0)
     MainSide.BorderSizePixel = 0
 
+    local MainSideShade = MainSide:Clone()
+    MainSideShade.Parent = Main
+    MainSideShade.ZIndex = -1
+    MainSideShade.BackgroundColor3 = Color3.fromRGB(0,0,0)
+    MainSideShade.BackgroundTransparency = 0.95
+    MainSideShade.Position = UDim2.new(0.005, 0, 0, 0)
+
+    local MainSideShadeGrad = MainSideShade:Clone()
+    MainSideShadeGrad.Parent = Main
+    MainSideShadeGrad.Position = UDim2.new(0.01, 0, 0, 0)
+    MainSideShade.ZIndex = -2
+    MainSideShade.BackgroundTransparency = 0.9
+
     coverup_2.Name = "coverup"
     coverup_2.Parent = MainSide
     coverup_2.BackgroundColor3 = themeList.Header

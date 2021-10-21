@@ -1794,8 +1794,8 @@ function Kavo.CreateLib(kavName, themeList)
                         if searching then
                             local searchForItem = string.lower(STextBox.Text)
                             for k, v in next, dropFrame:GetChildren() do
-                                if v:FindFirstChild("optionSelect") then
-                                    if string.match(v.optionSelect.Text:lower(), searchForItem) then
+                                if v.Name == "optionSelect" then
+                                    if string.match(v.Text:lower(), searchForItem) then
                                         print("yeeha")
                                         v.Visible = true
                                     else

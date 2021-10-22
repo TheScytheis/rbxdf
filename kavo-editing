@@ -1809,10 +1809,8 @@ function Kavo.CreateLib(kavName, themeList)
                             for k, v in next, dropFrame:GetChildren() do
                                 if v.Name == "optionSelect" then
                                     if string.match(v.Text:lower(), searchForItem) then
-                                        print("yeeha")
                                         v.Visible = true
                                     else
-                                        print("naaha")
                                         v.Visible = false
                                     end
                                 end
@@ -2488,10 +2486,8 @@ function Kavo.CreateLib(kavName, themeList)
                             for k, v in next, dropFrame:GetChildren() do
                                 if v:FindFirstChild("togName") then
                                     if string.match(v.togName.Text:lower(), searchForItem) then
-                                        print("yeeha")
                                         v.Visible = true
                                     else
-                                        print("naaha")
                                         v.Visible = false
                                     end
                                 end

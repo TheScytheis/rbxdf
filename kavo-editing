@@ -552,8 +552,9 @@ function Kavo.CreateLib(kavName, themeList)
         Icon.Parent = _Template
         Icon.BackgroundColor3 = IconSettings.BackgroundColor3
         Icon.BackgroundTransparency = IconSettings.BackgroundTransparency
-        Icon.Position = UDim2.new(0.0277603213, 0, 0.182097465, 0)
-        Icon.Size = UDim2.new(0, 40, 0, 40)
+        Icon.Position = UDim2.new(0.01, 0, 0.01, 0)
+        Icon.ScaleType = Enum.ScaleType.Crop
+        Icon.Size = UDim2.new(0, 60, 0, 60)
         Icon.Image = Image
         Debug("Icon finished")
 

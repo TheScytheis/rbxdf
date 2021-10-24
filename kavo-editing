@@ -530,11 +530,11 @@ function Kavo.CreateLib(kavName, themeList)
             _Template.Name = "_Template";
         end
         Debug("_Temp 1/9")
-        _Template.BackgroundColor3 = Color3.fromRGB(27, 42, 53)
+        _Template.BackgroundColor3 = MainSettings.BackgroundColor3
         Debug("_Temp 2/9")
         _Template.BackgroundTransparency = MainSettings.BackgroundTransparency
         Debug("_Temp 3/9")
-        _Template.BorderColor3 = MainSettings.BorderColor3
+        _Template.BorderColor3 = Color3.fromRGB(27, 42, 53)
         Debug("_Temp 4/9")
         _Template.Position = UDim2.new(0.713929176, 0, 0.587826073, 0)
         Debug("_Temp 5/9")

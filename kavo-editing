@@ -140,7 +140,7 @@ end)
 getgenv().LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
 
 
-function Kavo.CreateLib(kavName, themeList)
+function Kavo:CreateLib(kavName, themeList)
     if not themeList then
         themeList = themes
     end
@@ -465,7 +465,7 @@ function Kavo.CreateLib(kavName, themeList)
 
     local NotificationFolder = Instance.new("Folder");
 
-    Kavo.CreateNotification = function(TitleData, Text, Image, Settings)
+    Kavo:CreateNotification = function(TitleData, Text, Image, Settings)
 
         Debug("CREATED_",TitleData, Text, Image, Settings)
         local Duration = Settings.Duration;
@@ -622,7 +622,7 @@ function Kavo.CreateLib(kavName, themeList)
         return {_Template, Duration, GradientSettings.Retract, GradientSettings.Extend};
     end
 
-    Kavo.InsertNotification = function(Notification, Duration, Retracting, Extending)
+    Kavo:InsertNotification = function(Notification, Duration, Retracting, Extending)
         Debug("Insert Called, waiting to run")
         repeat game:GetService("RunService").Heartbeat:Wait() until Done;
 
@@ -670,7 +670,7 @@ function Kavo.CreateLib(kavName, themeList)
         Tween:Play();
     end
 
-    Kavo.Notify = function(...)
+    Kavo:Notify = function(...)
         coroutine.wrap(function(...)
             local Args = {...};
             
@@ -712,10 +712,10 @@ function Kavo.CreateLib(kavName, themeList)
 
             Debug("Settings set done")
 
-            local NotifFrame = Kavo.CreateNotification(Args[1], Args[2], Args[3], Args[5]);
+            local NotifFrame = Kavo:CreateNotification(Args[1], Args[2], Args[3], Args[5]);
 
             Debug("Finished creating", "Inserting")
-            Kavo.InsertNotification(NotifFrame[1], NotifFrame[2], NotifFrame[3], NotifFrame[4]);
+            Kavo:InsertNotification(NotifFrame[1], NotifFrame[2], NotifFrame[3], NotifFrame[4]);
             Debug("Finished Inserting")
         end)(...)
     end
@@ -761,7 +761,7 @@ function Kavo.CreateLib(kavName, themeList)
         return ArgThree;
     end
 
-    Kavo.CreateWallNotification = function(TitleText, DescriptionText, Settings)
+    Kavo:CreateWallNotification = function(TitleText, DescriptionText, Settings)
 
         local Duration = Settings.Duration;
         local TitleSettings = Settings.TitleSettings;
@@ -841,7 +841,7 @@ function Kavo.CreateLib(kavName, themeList)
         return {Main, Duration, MainSettings};
     end
 
-    Kavo.InsertWallNotification = function(Notification, Duration, SettingsTable)
+    Kavo:InsertWallNotification = function(Notification, Duration, SettingsTable)
         local ShowSize = SettingsTable.VisibleSize;
         local HiddenSize = SettingsTable.HiddenSize;
         local PositionType = SettingsTable.Orientation;
@@ -934,7 +934,7 @@ function Kavo.CreateLib(kavName, themeList)
         Notification.Parent:Destroy();
     end
 
-    Kavo.WallNotification = function(...)
+    Kavo:WallNotification = function(...)
         coroutine.wrap(function(...)
             local Args = {...};
 
@@ -969,13 +969,13 @@ function Kavo.CreateLib(kavName, themeList)
             end
 
 
-            local NotifFrame = Kavo.CreateWallNotification(Args[1], Args[2], Args[4]);
+            local NotifFrame = Kavo:CreateWallNotification(Args[1], Args[2], Args[4]);
 
-            Kavo.InsertWallNotification(NotifFrame[1], NotifFrame[2], NotifFrame[3]);
+            Kavo:InsertWallNotification(NotifFrame[1], NotifFrame[2], NotifFrame[3]);
         end)(...)
     end
 
-    Kavo.ClearOverride = function()
+    Kavo:ClearOverride = function()
         for _, Folder in next, game:GetService("CoreGui"):FindFirstChild("RobloxGui"):GetChildren() do
             if Folder.Name:match("NotificationFolder") or Folder.Name:match("WallNotificationFolder") then
                 Folder:Destroy();

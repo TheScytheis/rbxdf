@@ -530,7 +530,7 @@ function Kavo.CreateLib(kavName, themeList)
             _Template.Name = "_Template";
         end
         Debug("_Temp 1/9")
-        _Template.BackgroundColor3 = MainSettings.BackgroundColor3
+        _Template.BackgroundColor3 = Color3.fromRGB(27, 42, 53)
         Debug("_Temp 2/9")
         _Template.BackgroundTransparency = MainSettings.BackgroundTransparency
         Debug("_Temp 3/9")

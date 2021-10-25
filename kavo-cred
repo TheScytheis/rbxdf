@@ -231,28 +231,28 @@ function Kavo.CreateLib(kavName, themeList)
 
     MainHeader.Name = "MainHeader"
     MainHeader.Parent = Main
-    MainHeader.BackgroundColor3 = themeList.Header
-    MainHeader.BackgroundTransparency = 1
+    MainHeader.BackgroundColor3 = Color3.fromRGB(28, 29, 34)
+    MainHeader.BackgroundTransparency = 0.6
     Objects[MainHeader] = "BackgroundColor3"
-    MainHeader.Size = UDim2.new(0, 460, 0, 29)
+    MainHeader.Size = UDim2.new(0, 460, 0, 40)
     MainHeader.BorderSizePixel = 0
+    MainHeader.ZIndex = 1
     
     TabRep.Name = "letab"
     TabRep.Parent = MainHeader
     TabRep.BackgroundTransparency = 1.000
-    TabRep.Position = UDim2.new(0.435, 0, 0, 0)
+    TabRep.Position = UDim2.new(0.324, 0, 0.125, 0)
     TabRep.Size = UDim2.new(0, 200, 0, 29)
-    TabRep.TextXAlignment = Enum.TextXAlignment.Left
+    TabRep.TextXAlignment = Enum.TextXAlignment.Center
     TabRep.TextSize = 17
     TabRep.Font = Enum.Font.GothamSemibold
     TabRep.RichText = true
-    TabRep.TextColor3 = themeList.Header
-    Objects[TabRep] = "Header"
+    TabRep.TextColor3 = Color3.fromRGB(255,255,255)
 
     close.Name = "close"
     close.Parent = MainHeader
     close.BackgroundTransparency = 1.000
-    close.Position = UDim2.new(0.949999988, 0, 0.137999997, 0)
+    close.Position = UDim2.new(0.949999988, 0, 0.2, 0)
     close.Size = UDim2.new(0, 21, 0, 21)
     close.ZIndex = 2
     close.Image = "rbxassetid://3926305904"
@@ -278,6 +278,7 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.Position = UDim2.new(-0.001, 0, 0, 0)
     MainSide.Size = UDim2.new(0.126, 0, 0.999, 0)
     MainSide.BorderSizePixel = 0
+    MainSide.ZIndex = 0
 
     local MainSideShade = MainSide:Clone()
     MainSideShade.Parent = Main
@@ -297,17 +298,17 @@ function Kavo.CreateLib(kavName, themeList)
     tabFrames.Parent = MainSide
     tabFrames.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     tabFrames.BackgroundTransparency = 1.000
-    tabFrames.Position = UDim2.new(0, 0, 0.15, 0)
-    tabFrames.Size = UDim2.new(1, 0, 0, 269)
+    tabFrames.Position = UDim2.new(0, 0, 0.205, 0)
+    tabFrames.Size = UDim2.new(1, 0, -0.055, 269)
     
     
     
     easyhub.Name = "easylogo"
-    easyhub.Parent = MainSide
+    easyhub.Parent = MainHeader
     easyhub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     easyhub.BackgroundTransparency = 1.000
-    easyhub.Position = UDim2.new(0.22, 0, -0.03, 0)
-    easyhub.Size = UDim2.new(0.6, 0, 0.22, 0)
+    easyhub.Position = UDim2.new(-0.02,0,-0.4,0)
+    easyhub.Size = UDim2.new(0.164,0,1.881,0)
     easyhub.Image = "rbxassetid://7786259244"
     easyhub.ScaleType = Enum.ScaleType.Crop
 
@@ -321,8 +322,8 @@ function Kavo.CreateLib(kavName, themeList)
     pages.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     pages.BackgroundTransparency = 1.000
     pages.BorderSizePixel = 0
-    pages.Position = UDim2.new(0.157, 0, 0.123, 0)
-    pages.Size = UDim2.new(0, 360, 0, 280)
+    pages.Position = UDim2.new(0.157, 0, 0.173, 0)
+    pages.Size = UDim2.new(0, 360, 0, 263)
     Pages.Name = "Pages"
     Pages.Parent = pages
 
@@ -1029,7 +1030,7 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.Parent = tabFrames
         tabButton.BackgroundColor3 = Color3.fromRGB(255,255,255)
         Objects[tabButton] = "SchemeColor"
-        tabButton.Size = UDim2.new(0.62, 0, 0.13, 0)
+        tabButton.Size = UDim2.new(0.62, 0, 0.142, 0)
         tabButton.AutoButtonColor = false
         tabButton.Font = Enum.Font.GothamSemibold
         tabButton.Text = ""
@@ -1057,8 +1058,8 @@ function Kavo.CreateLib(kavName, themeList)
         house.Size = UDim2.new(0.8, 0, 0.8, 0)
         house.Image = "rbxassetid://3926317768"
         house.ImageColor3 = Color3.fromRGB(255, 255, 255)
-        house.ImageRectOffset = Vector2.new(755, 915)
-        house.ImageRectSize = Vector2.new(90, 90)
+        house.ImageRectOffset = Vector2.new(757, 915)
+        house.ImageRectSize = Vector2.new(85, 85)
         house.ImageTransparency = 0
 
         if first then
@@ -1083,7 +1084,7 @@ function Kavo.CreateLib(kavName, themeList)
             for i,v in next, Pages:GetChildren() do
                 v.Visible = false
             end
-	    TabRep.Text = tabButton.Name.." Tab"
+	    TabRep.Text = tabButton.Name.." Window"
             page.Visible = true
             for i,v in next, tabFrames:GetChildren() do
                 if v:IsA("TextButton") then

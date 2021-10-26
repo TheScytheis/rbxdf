@@ -350,9 +350,10 @@ function Kavo.CreateLib(kavName, themeList)
     TopBar.BackgroundColor3 = Color3.fromRGB(30,30,30)
     TopBar.BackgroundTransparency = 1.000
     TopBar.BorderSizePixel = 0
-    TopBar.Size = UDim2.new(0.568, 0, 0.152, 0)
-    TopBar.Position = UDim2.new(0, 0, 0.424, 0)
+    TopBar.Size = UDim2.new(0.572, 0, 0.155, 0)
+    TopBar.Position = UDim2.new(-0.004, 0, 0.421, 0)
     TopBar.ZIndex = -1
+    TopBar.Rotation = -90
     TopBar.Image = "rbxassetid://6276641225"
     TopBar.ImageColor3 = Color3.fromRGB(30, 30, 30)
     TopBar.ScaleType = Enum.ScaleType.Slice

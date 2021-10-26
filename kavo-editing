@@ -49,7 +49,7 @@ end
 
 
 local themes = {
-    SchemeColor = Color3.fromRGB(74, 99, 135),
+    SchemeColor = Color3.fromRGB(75, 76, 83),
     Background = Color3.fromRGB(36, 37, 43),
     Header = Color3.fromRGB(28, 29, 34),
     TextColor = Color3.fromRGB(255,255,255),
@@ -57,7 +57,7 @@ local themes = {
 }
 local themeStyles = {
     Ez = {
-        SchemeColor = Color3.fromRGB(74, 99, 135),
+        SchemeColor = Color3.fromRGB(75, 76, 83),
         Background = Color3.fromRGB(36, 37, 43),
         Header = Color3.fromRGB(28, 29, 34),
         TextColor = Color3.fromRGB(255,255,255),
@@ -1172,9 +1172,9 @@ function Kavo.CreateLib(kavName, themeList)
             end
             sectionHead.Name = "sectionHead"
             sectionHead.Parent = sectionFrame
-            sectionHead.BackgroundColor3 = themeList.Header
+            sectionHead.BackgroundColor3 = themeList.Background
             sectionHead.BorderColor3 = themeList.SchemeColor
-            sectionHead.BorderSizePixel = 2
+            sectionHead.BorderSizePixel = 1
             sectionHead.BorderMode = Enum.BorderMode.Inset
             Objects[sectionHead] = "BorderColor3"
             sectionHead.Size = UDim2.new(0, 352, 0, 33)

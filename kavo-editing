@@ -231,6 +231,7 @@ function Kavo.CreateLib(kavName, themeList)
     MainHolder.ClipsDescendants = true
     MainHolder.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
     MainHolder.Size = UDim2.new(0, 575, 0, 330)
+    MainHolder.AnchorPoint = Vector2.new(0.5, 0.5)
 
     Shadow.Name = "Shadow"
     Shadow.Parent = MainHolder
@@ -270,8 +271,9 @@ function Kavo.CreateLib(kavName, themeList)
     Main.Parent = MainHolder
     Main.BackgroundColor3 = themeList.Background
     Main.ClipsDescendants = true
-    Main.Position = UDim2.new(0,0,0,0)
-    Main.Size = UDim2.new(0, 575, 0, 330)
+    Main.Position = UDim2.new(0.5,0,0.5,0)
+    Main.Size = UDim2.new(1,0,1,0)
+    Main.AnchorPoint = Vector2.new(0.5, 0.5)
 
     MainCorner.CornerRadius = UDim.new(0, 8)
     MainCorner.Name = "MainCorner"

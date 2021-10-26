@@ -345,11 +345,11 @@ function Kavo.CreateLib(kavName, themeList)
 
 
     local MainSideFill = MainSide:Clone()
-    MainSideShade.Parent = Main
-    MainSideShade.ZIndex = -1
-    MainSideShade.BackgroundColor3 = themeList.Header
-    MainSideShade.BackgroundTransparency = 0
-    MainSideShade.Position = UDim2.new(0.002, 0, 0, 0)
+    MainSideFill.Parent = Main
+    MainSideFill.ZIndex = -1
+    MainSideFill.BackgroundColor3 = themeList.Header
+    MainSideFill.BackgroundTransparency = 0
+    MainSideFill.Position = UDim2.new(0.002, 0, 0, 0)
 
     SideCorner.CornerRadius = UDim.new(0, 8)
     SideCorner.Name = "SideCorner"

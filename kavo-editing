@@ -248,7 +248,7 @@ function Kavo.CreateLib(kavName, themeList)
     Image.BackgroundTransparency = 1.000
     Image.BorderSizePixel = 0
     Image.Position = UDim2.new(0.5, 0, 0.5, 0)
-    Image.Size = UDim2.new(1,0,0.498,0)
+    Image.Size = UDim2.new(1,0,0.688,0)
     Image.ZIndex = 7
     Image.Image = "rbxassetid://5587865193"
     Image.ImageColor3 = Color3.fromRGB(0, 0, 0)
@@ -261,7 +261,7 @@ function Kavo.CreateLib(kavName, themeList)
     Image_2.BackgroundTransparency = 1.000
     Image_2.BorderSizePixel = 0
     Image_2.Position = UDim2.new(0.5, 0, 0.5, -5)
-    Image_2.Size = UDim2.new(0.721,0,0.589,0)
+    Image_2.Size = UDim2.new(0.851,0,0.606,0)
     Image_2.ZIndex = 7
     Image_2.Image = "rbxassetid://5587865193"
     Image_2.ImageColor3 = Color3.fromRGB(0, 0, 0)

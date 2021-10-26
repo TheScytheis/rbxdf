@@ -344,12 +344,19 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.BorderSizePixel = 0
 
 
-    local MainSideFill = MainSide:Clone()
-    MainSideFill.Parent = Main
-    MainSideFill.ZIndex = -1
-    MainSideFill.BackgroundColor3 = themeList.Header
-    MainSideFill.BackgroundTransparency = 0
-    MainSideFill.Position = UDim2.new(0.002, 0, 0, 0)
+    local TopBar = Instance.new("ImageLabel")
+    TopBar.Name = "TopBar"
+    TopBar.Parent = Main
+    TopBar.BackgroundColor3 = Color3.fromRGB(30,30,30)
+    TopBar.BackgroundTransparency = 1.000
+    TopBar.BorderSizePixel = 0
+    TopBar.Size = UDim2.new(0.568, 0, 0.152, 0)
+    TopBar.Position = UDim2.new(0, 0, 0.424, 0)
+    TopBar.ZIndex = -1
+    TopBar.Image = "rbxassetid://6276641225"
+    TopBar.ImageColor3 = Color3.fromRGB(30, 30, 30)
+    TopBar.ScaleType = Enum.ScaleType.Slice
+    TopBar.SliceCenter = Rect.new(256, 256, 256, 256)
 
     SideCorner.CornerRadius = UDim.new(0, 8)
     SideCorner.Name = "SideCorner"

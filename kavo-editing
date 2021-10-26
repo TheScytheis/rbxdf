@@ -367,7 +367,7 @@ function Kavo.CreateLib(kavName, themeList)
     coverup_2.BorderSizePixel = 0
     coverup_2.Position = UDim2.new(1,0,1,0)
     coverup_2.Size = UDim2.new(0,1,1,0)
-    coverup_2.AncorPoint = Vector2.new(0,1)
+    coverup_2.AnchorPoint = Vector2.new(0,1)
 
     tabFrames.Name = "tabFrames"
     tabFrames.Parent = MainSide

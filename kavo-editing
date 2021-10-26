@@ -186,12 +186,17 @@ function Kavo.CreateLib(kavName, themeList)
         end
     end
     local ScreenGui = Instance.new("ScreenGui")
+    local MainHolder = Instance.new("Frame")
+    local Shadow = Instance.new("Frame")
+    local Image = Instance.new("ImageLabel")
+    local Image_2 = Instance.new("ImageLabel")
     local Main = Instance.new("Frame")
     local MainCorner = Instance.new("UICorner")
     local MainHeader = Instance.new("Frame")
     local title = Instance.new("TextLabel")
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
+    local SideCorner = Instance.new("UICorner")
     local house = Instance.new("ImageLabel")
     local easyhub = Instance.new("ImageLabel")
     local coverup_2 = Instance.new("Frame")
@@ -220,14 +225,55 @@ function Kavo.CreateLib(kavName, themeList)
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     ScreenGui.ResetOnSpawn = false
 
+    MainHolder.Name = "MainHolder"
+    MainHolder.Parent = ScreenGui
+    MainHolder.BackgroundTransparency = 1
+    MainHolder.ClipsDescendants = true
+    MainHolder.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
+    MainHolder.Size = UDim2.new(0, 575, 0, 330)
+
+    Shadow.Name = "Shadow"
+    Shadow.Parent = MainHolder
+    Shadow.AnchorPoint = Vector2.new(0.5, 0.5)
+    Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Shadow.BackgroundTransparency = 1.000
+    Shadow.BorderSizePixel = 0
+    Shadow.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Shadow.Size = UDim2.new(1, 0, 1, 25)
+
+    Image.Name = "Image"
+    Image.Parent = Shadow
+    Image.AnchorPoint = Vector2.new(0.5, 0.5)
+    Image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Image.BackgroundTransparency = 1.000
+    Image.BorderSizePixel = 0
+    Image.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Image.Size = UDim2.new(1.60000002, 0, 1.29999995, 0)
+    Image.ZIndex = 7
+    Image.Image = "rbxassetid://5587865193"
+    Image.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    Image.ImageTransparency = 0.300
+
+    Image_2.Name = "Image"
+    Image_2.Parent = Shadow
+    Image_2.AnchorPoint = Vector2.new(0.5, 0.5)
+    Image_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Image_2.BackgroundTransparency = 1.000
+    Image_2.BorderSizePixel = 0
+    Image_2.Position = UDim2.new(0.5, 0, 0.5, -5)
+    Image_2.Size = UDim2.new(1.20000005, 0, 1.10000002, 0)
+    Image_2.ZIndex = 7
+    Image_2.Image = "rbxassetid://5587865193"
+    Image_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
     Main.Name = "Main"
-    Main.Parent = ScreenGui
+    Main.Parent = MainHolder
     Main.BackgroundColor3 = themeList.Background
     Main.ClipsDescendants = true
-    Main.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
+    Main.Position = UDim2.new(0,0,0,0)
     Main.Size = UDim2.new(0, 575, 0, 330)
 
-    MainCorner.CornerRadius = UDim.new(0, 4)
+    MainCorner.CornerRadius = UDim.new(0, 8)
     MainCorner.Name = "MainCorner"
     MainCorner.Parent = Main
 
@@ -293,6 +339,10 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.Position = UDim2.new(-0.001, 0, 0, 0)
     MainSide.Size = UDim2.new(0.325, 0, 0.999, 0)
     MainSide.BorderSizePixel = 0
+
+    SideCorner.CornerRadius = UDim.new(0, 8)
+    SideCorner.Name = "SideCorner"
+    SideCorner.Parent = MainSide
 
     local MainSideShade = MainSide:Clone()
     MainSideShade.Parent = Main

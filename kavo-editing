@@ -49,7 +49,7 @@ end
 
 
 local themes = {
-    SchemeColor = Color3.fromRGB(30, 30, 30),
+    SchemeColor = Color3.fromRGB(200, 200, 200),
     Background = Color3.fromRGB(25, 25, 25),
     Header = Color3.fromRGB(30, 30, 30),
     TextColor = Color3.fromRGB(255,255,255),
@@ -57,7 +57,7 @@ local themes = {
 }
 local themeStyles = {
     Ez = {
-        SchemeColor = Color3.fromRGB(255, 255, 255),
+        SchemeColor = Color3.fromRGB(200, 200, 200),
         Background = Color3.fromRGB(25, 25, 25),
         Header = Color3.fromRGB(30, 30, 30),
         TextColor = Color3.fromRGB(255,255,255),
@@ -3907,8 +3907,9 @@ function Kavo.CreateLib(kavName, themeList)
             	local UICorner = Instance.new("UICorner")
             	label.Name = "label"
             	label.Parent = sectionInners
-            	label.BackgroundColor3 = themeList.SchemeColor
-            	label.BorderSizePixel = 0
+            	label.BackgroundColor3 = themeList.Background
+            	label.BorderColor3 = themeList.SchemeColor
+            	label.BorderSizePixel = 1
 				label.ClipsDescendants = true
             	label.Text = title
            		label.Size = UDim2.new(0, 352, 0, 33)
@@ -3932,7 +3933,7 @@ function Kavo.CreateLib(kavName, themeList)
 
 		        coroutine.wrap(function()
 		            while wait() do
-		                label.BackgroundColor3 = themeList.SchemeColor
+		                label.BackgroundColor3 = themeList.Background
 		                label.TextColor3 = themeList.TextColor
 		            end
 		        end)()

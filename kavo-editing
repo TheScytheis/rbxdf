@@ -209,7 +209,7 @@ function Kavo.CreateLib(kavName, themeList)
 
     local blurFrame = Instance.new("Frame")
 
-    Kavo:DraggingEnabled(MainHeader, MainHolder)
+    Kavo:DraggingEnabled(MainHeader, Main.Parent)
 
     blurFrame.Name = "blurFrame"
     blurFrame.Parent = pages

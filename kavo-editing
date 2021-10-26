@@ -49,17 +49,17 @@ end
 
 
 local themes = {
-    SchemeColor = Color3.fromRGB(75, 76, 83),
-    Background = Color3.fromRGB(36, 37, 43),
-    Header = Color3.fromRGB(28, 29, 34),
+    SchemeColor = Color3.fromRGB(30, 30, 30),
+    Background = Color3.fromRGB(25, 25, 25),
+    Header = Color3.fromRGB(30, 30, 30),
     TextColor = Color3.fromRGB(255,255,255),
     ElementColor = Color3.fromRGB(32, 32, 38)
 }
 local themeStyles = {
     Ez = {
-        SchemeColor = Color3.fromRGB(75, 76, 83),
-        Background = Color3.fromRGB(36, 37, 43),
-        Header = Color3.fromRGB(28, 29, 34),
+        SchemeColor = Color3.fromRGB(30, 30, 30),
+        Background = Color3.fromRGB(25, 25, 25),
+        Header = Color3.fromRGB(30, 30, 30),
         TextColor = Color3.fromRGB(255,255,255),
         ElementColor = Color3.fromRGB(32, 32, 38)
     },
@@ -1104,7 +1104,7 @@ function Kavo.CreateLib(kavName, themeList)
 
         tabButton.Name = tabName
         tabButton.Parent = tabFrames
-        tabButton.BackgroundColor3 = themeList.SchemeColor
+        tabButton.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
         Objects[tabButton] = "SchemeColor"
         tabButton.Size = UDim2.new(1, 0, 0.140, 0)
         tabButton.AutoButtonColor = false
@@ -1113,7 +1113,7 @@ function Kavo.CreateLib(kavName, themeList)
         tabButton.TextColor3 = themeList.TextColor
         Objects[tabButton] = "TextColor3"
         tabButton.TextSize = 17.000
-	tabButton.TextXAlignment = Enum.TextXAlignment.Left
+	    tabButton.TextXAlignment = Enum.TextXAlignment.Left
         tabButton.BackgroundTransparency = 1
 	
 	tabNametag.Name = tabName

@@ -261,7 +261,7 @@ function Kavo.CreateLib(kavName, themeList)
     Image_2.BackgroundTransparency = 1.000
     Image_2.BorderSizePixel = 0
     Image_2.Position = UDim2.new(0.5, 0, 0.5, -5)
-    Image_2.Size = UDim2.new(0.851,0,0.606,0)
+    Image_2.Size = UDim2.new(0.851,0,0.550,0)
     Image_2.ZIndex = 7
     Image_2.Image = "rbxassetid://5587865193"
     Image_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
@@ -434,7 +434,7 @@ function Kavo.CreateLib(kavName, themeList)
         else
             game.CoreGui[getgenv().LibName].Enabled = true
             game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                Size = UDim2.new(0, 575, 0, 330)
+                Size = UDim2.new(0, 576, 0, 330)
             }):Play()
             Shadow.Visible = true
         end

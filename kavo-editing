@@ -362,10 +362,12 @@ function Kavo.CreateLib(kavName, themeList)
 
     coverup_2.Name = "coverup"
     coverup_2.Parent = MainSide
-    coverup_2.BackgroundColor3 = Color3.fromRGB(29, 30, 37)
+    coverup_2.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+    coverup_2.BackgroundTransparency = 0.9
     coverup_2.BorderSizePixel = 0
-    coverup_2.Position = UDim2.new(0.998, 0, 0.012, 0)
-    coverup_2.Size = UDim2.new(0, 0, 0, 325)
+    coverup_2.Position = UDim2.new(1,0,1,0)
+    coverup_2.Size = UDim2.new(0,1,1,0)
+    coverup_2.AncorPoint = Vector2.new(0,1)
 
     tabFrames.Name = "tabFrames"
     tabFrames.Parent = MainSide
@@ -3916,7 +3918,6 @@ function Kavo.CreateLib(kavName, themeList)
 	            label.Text = "  "..title
 	            label.RichText = true
 	            label.TextColor3 = themeList.TextColor
-	            Objects[label] = "TextColor3"
 	            label.TextSize = 14.000
 	            label.TextXAlignment = Enum.TextXAlignment.Left
 	            

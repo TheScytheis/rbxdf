@@ -426,14 +426,14 @@ function Kavo.CreateLib(kavName, themeList)
     function Kavo:ToggleUI()
         if game.CoreGui[getgenv().LibName].Enabled then
             Shadow.Visible = false
-            game.TweenService:Create(MainHolder, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+            game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
                 Size = UDim2.new(0,0,0,0)
             }):Play()
-            repeat wait() until MainHolder.Size == UDim2.new(0,0,0,0)
+            repeat wait() until Main.Size == UDim2.new(0,0,0,0)
             game.CoreGui[getgenv().LibName].Enabled = false
         else
             game.CoreGui[getgenv().LibName].Enabled = true
-            game.TweenService:Create(MainHolder, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+            game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
                 Size = UDim2.new(0, 575, 0, 330)
             }):Play()
             Shadow.Visible = true

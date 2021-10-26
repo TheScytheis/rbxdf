@@ -57,7 +57,7 @@ local themes = {
 }
 local themeStyles = {
     Ez = {
-        SchemeColor = Color3.fromRGB(30, 30, 30),
+        SchemeColor = Color3.fromRGB(255, 255, 255),
         Background = Color3.fromRGB(25, 25, 25),
         Header = Color3.fromRGB(30, 30, 30),
         TextColor = Color3.fromRGB(255,255,255),
@@ -1050,7 +1050,6 @@ function Kavo.CreateLib(kavName, themeList)
             Main.BackgroundColor3 = themeList.Background
             MainHeader.BackgroundColor3 = themeList.Header
             MainSide.BackgroundColor3 = themeList.Header
-            coverup_2.BackgroundColor3 = themeList.Header
         end
     end)()
 
@@ -1116,17 +1115,17 @@ function Kavo.CreateLib(kavName, themeList)
 	    tabButton.TextXAlignment = Enum.TextXAlignment.Left
         tabButton.BackgroundTransparency = 1
 	
-	tabNametag.Name = tabName
-	tabNametag.Text = tabButton.Name
-	tabNametag.Parent = tabButton
-	tabNametag.BackgroundTransparency = 1
-	tabNametag.Position = UDim2.new(0.27,0,0,0)
-	tabNametag.Size = UDim2.new(0.73,0,1,0)
-	tabNametag.Font = Enum.Font.GothamSemibold
-	tabNametag.TextColor3 = themeList.TextColor
+        tabNametag.Name = tabName
+        tabNametag.Text = tabButton.Name
+        tabNametag.Parent = tabButton
+        tabNametag.BackgroundTransparency = 1
+        tabNametag.Position = UDim2.new(0.27,0,0,0)
+        tabNametag.Size = UDim2.new(0.73,0,1,0)
+        tabNametag.Font = Enum.Font.GothamSemibold
+        tabNametag.TextColor3 = themeList.TextColor
         Objects[tabNametag] = "TextColor3"
         tabNametag.TextSize = 17.000
-	tabNametag.TextXAlignment = Enum.TextXAlignment.Left
+	    tabNametag.TextXAlignment = Enum.TextXAlignment.Left
 
         if first then
 	    TabRep.Text = tabButton.Name.." Tab"
@@ -1180,7 +1179,7 @@ function Kavo.CreateLib(kavName, themeList)
                 page.BackgroundColor3 = themeList.Background
                 page.ScrollBarImageColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 16, themeList.SchemeColor.g * 255 - 15, themeList.SchemeColor.b * 255 - 28)
                 tabNametag.TextColor3 = themeList.TextColor
-                tabButton.BackgroundColor3 = themeList.SchemeColor
+                tabButton.BackgroundColor3 = Color3.fromRGB(75, 76, 83)
             end
         end)()
     
@@ -1272,7 +1271,7 @@ function Kavo.CreateLib(kavName, themeList)
                 sectionFrame.BackgroundColor3 = themeList.Background
                 sectionHead.BorderColor3 = themeList.SchemeColor
                 tabNametag.TextColor3 = themeList.TextColor
-                tabButton.BackgroundColor3 = themeList.SchemeColor
+                tabButton.BackgroundColor3 = Color3.fromRGB(75, 76, 83)
                 sectionName.TextColor3 = themeList.TextColor
             end
         end)()

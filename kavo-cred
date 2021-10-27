@@ -49,19 +49,19 @@ end
 
 
 local themes = {
-    SchemeColor = Color3.fromRGB(74, 99, 135),
-    Background = Color3.fromRGB(36, 37, 43),
-    Header = Color3.fromRGB(28, 29, 34),
+    SchemeColor = Color3.fromRGB(200, 200, 200),
+    Background = Color3.fromRGB(25, 25, 25),
+    Header = Color3.fromRGB(30, 30, 30),
     TextColor = Color3.fromRGB(255,255,255),
-    ElementColor = Color3.fromRGB(32, 32, 38)
+    ElementColor = Color3.fromRGB(30, 30, 30)
 }
 local themeStyles = {
     Ez = {
-        SchemeColor = Color3.fromRGB(74, 99, 135),
-        Background = Color3.fromRGB(36, 37, 43),
-        Header = Color3.fromRGB(28, 29, 34),
+        SchemeColor = Color3.fromRGB(200, 200, 200),
+        Background = Color3.fromRGB(25, 25, 25),
+        Header = Color3.fromRGB(30, 30, 30),
         TextColor = Color3.fromRGB(255,255,255),
-        ElementColor = Color3.fromRGB(32, 32, 38)
+        ElementColor = Color3.fromRGB(30, 30, 30)
     },
     LightTheme = {
         SchemeColor = Color3.fromRGB(150, 150, 150),
@@ -186,13 +186,19 @@ function Kavo.CreateLib(kavName, themeList)
         end
     end
     local ScreenGui = Instance.new("ScreenGui")
+    local MainHolder = Instance.new("Frame")
+    local Shadow = Instance.new("Frame")
+    local Image = Instance.new("ImageLabel")
+    local Image_2 = Instance.new("ImageLabel")
     local Main = Instance.new("Frame")
     local MainCorner = Instance.new("UICorner")
     local MainHeader = Instance.new("Frame")
     local close = Instance.new("ImageButton")
     local MainSide = Instance.new("Frame")
+    local SideCorner = Instance.new("UICorner")
     local house = Instance.new("ImageLabel")
     local easyhub = Instance.new("ImageLabel")
+    local coverup_2 = Instance.new("Frame")
     local tabFrames = Instance.new("Frame")
     local tabListing = Instance.new("UIListLayout")
     local pages = Instance.new("Frame")
@@ -201,8 +207,6 @@ function Kavo.CreateLib(kavName, themeList)
     local TabRep = Instance.new("TextLabel")
 
     local blurFrame = Instance.new("Frame")
-
-    Kavo:DraggingEnabled(MainHeader, Main)
 
     blurFrame.Name = "blurFrame"
     blurFrame.Parent = pages
@@ -218,12 +222,57 @@ function Kavo.CreateLib(kavName, themeList)
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     ScreenGui.ResetOnSpawn = false
 
+    MainHolder.Name = "MainHolder"
+    MainHolder.Parent = ScreenGui
+    MainHolder.BackgroundTransparency = 1
+    MainHolder.ClipsDescendants = true
+    MainHolder.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
+    MainHolder.Size = UDim2.new(0,900,0,645)
+    MainHolder.AnchorPoint = Vector2.new(0.5, 0.5)
+
+    Shadow.Name = "Shadow"
+    Shadow.Parent = MainHolder
+    Shadow.AnchorPoint = Vector2.new(0.5, 0.5)
+    Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Shadow.BackgroundTransparency = 1.000
+    Shadow.BorderSizePixel = 0
+    Shadow.Position = UDim2.new(0.5, 0, 0.5, 0)
+    Shadow.Size = UDim2.new(1.029,0,1.097,25)
+
+    Image.Name = "Image"
+    Image.Parent = Shadow
+    Image.AnchorPoint = Vector2.new(0.5, 0.5)
+    Image.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Image.BackgroundTransparency = 1.000
+    Image.BorderSizePixel = 0
+    Image.Position = UDim2.new(0.5, 0, 0.498, 0)
+    Image.Size = UDim2.new(0.918,0,0.688,0)
+    Image.ZIndex = 7
+    Image.Image = "rbxassetid://5587865193"
+    Image.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    Image.ImageTransparency = 0.300
+
+    Image_2.Name = "Image"
+    Image_2.Parent = Shadow
+    Image_2.AnchorPoint = Vector2.new(0.5, 0.5)
+    Image_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Image_2.BackgroundTransparency = 1.000
+    Image_2.BorderSizePixel = 0
+    Image_2.Position = UDim2.new(0.5, 0, 0.515, -5)
+    Image_2.Size = UDim2.new(0.851,0,0.530,0)
+    Image_2.ZIndex = 7
+    Image_2.Image = "rbxassetid://5587865193"
+    Image_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
     Main.Name = "Main"
-    Main.Parent = ScreenGui
+    Main.Parent = MainHolder
     Main.BackgroundColor3 = themeList.Background
     Main.ClipsDescendants = true
-    Main.Position = UDim2.new(0.336503863, 0, 0.275485456, 0)
+    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
     Main.Size = UDim2.new(0, 460, 0, 330)
+    Main.AnchorPoint = Vector2.new(0.5, 0.5)
+
+    Kavo:DraggingEnabled(MainHeader, Main.Parent)
 
     MainCorner.CornerRadius = UDim.new(0, 4)
     MainCorner.Name = "MainCorner"
@@ -232,7 +281,7 @@ function Kavo.CreateLib(kavName, themeList)
     MainHeader.Name = "MainHeader"
     MainHeader.Parent = Main
     MainHeader.BackgroundColor3 = Color3.fromRGB(28, 29, 34)
-    MainHeader.BackgroundTransparency = 0.6
+    MainHeader.BackgroundTransparency = 1
     Objects[MainHeader] = "BackgroundColor3"
     MainHeader.Size = UDim2.new(0, 460, 0, 40)
     MainHeader.BorderSizePixel = 0
@@ -252,7 +301,7 @@ function Kavo.CreateLib(kavName, themeList)
     close.Name = "close"
     close.Parent = MainHeader
     close.BackgroundTransparency = 1.000
-    close.Position = UDim2.new(0.949999988, 0, 0.2, 0)
+    close.Position = UDim2.new(0.942, 0, 0.135, 0)
     close.Size = UDim2.new(0, 21, 0, 21)
     close.ZIndex = 2
     close.Image = "rbxassetid://3926305904"
@@ -275,23 +324,52 @@ function Kavo.CreateLib(kavName, themeList)
     MainSide.Parent = Main
     MainSide.BackgroundColor3 = themeList.Header
     Objects[MainSide] = "Header"
-    MainSide.Position = UDim2.new(-0.001, 0, 0, 0)
+    MainSide.Position = UDim2.new(-0.003, 0, 0, 0)
     MainSide.Size = UDim2.new(0.126, 0, 0.999, 0)
     MainSide.BorderSizePixel = 0
     MainSide.ZIndex = 0
+
+    local TopBar = Instance.new("ImageLabel")
+    TopBar.Name = "TopBar"
+    TopBar.Parent = Main
+    TopBar.BackgroundColor3 = Color3.fromRGB(30,30,30)
+    TopBar.BackgroundTransparency = 1.000
+    TopBar.BorderSizePixel = 0
+    TopBar.Size = UDim2.new(0.719,0,0.155,0)
+    TopBar.Position = UDim2.new(-0.292,0,0.423,0)
+    TopBar.ZIndex = -1
+    TopBar.Rotation = -90
+    TopBar.Image = "rbxassetid://6276641225"
+    TopBar.ImageColor3 = Color3.fromRGB(30, 30, 30)
+    TopBar.ScaleType = Enum.ScaleType.Slice
+    TopBar.SliceCenter = Rect.new(256, 256, 256, 256)
 
     local MainSideShade = MainSide:Clone()
     MainSideShade.Parent = Main
     MainSideShade.ZIndex = -1
     MainSideShade.BackgroundColor3 = Color3.fromRGB(0,0,0)
     MainSideShade.BackgroundTransparency = 0.95
-    MainSideShade.Position = UDim2.new(0.005, 0, 0, 0)
+    MainSideShade.Position = UDim2.new(0.003, 0, 0, 0)
 
     local MainSideShadeGrad = MainSideShade:Clone()
     MainSideShadeGrad.Parent = Main
-    MainSideShadeGrad.Position = UDim2.new(0.01, 0, 0, 0)
+    MainSideShadeGrad.Position = UDim2.new(0.008, 0, 0, 0)
     MainSideShade.ZIndex = -2
     MainSideShade.BackgroundTransparency = 0.9
+
+    SideCorner.CornerRadius = UDim.new(0, 8)
+    SideCorner.Name = "SideCorner"
+    SideCorner.Parent = MainSide
+
+
+    coverup_2.Name = "coverup"
+    coverup_2.Parent = MainSide
+    coverup_2.BackgroundColor3 = Color3.fromRGB(175, 175, 175)
+    coverup_2.BackgroundTransparency = 0.9
+    coverup_2.BorderSizePixel = 0
+    coverup_2.Position = UDim2.new(1,0,1,0)
+    coverup_2.Size = UDim2.new(0,1,1,0)
+    coverup_2.AnchorPoint = Vector2.new(0,1)
 
 
     tabFrames.Name = "tabFrames"

@@ -312,6 +312,7 @@ function Kavo.CreateLib(kavName, themeList)
             ImageTransparency = 1
         }):Play()
         wait()
+        Shadow.Visible = false
         game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 			Size = UDim2.new(0,0,0,0),
 			Position = UDim2.new(0, Main.AbsolutePosition.X + (Main.AbsoluteSize.X / 2), 0, Main.AbsolutePosition.Y + (Main.AbsoluteSize.Y / 2))
@@ -429,6 +430,7 @@ function Kavo.CreateLib(kavName, themeList)
 
     function Kavo:ToggleUI()
         if game.CoreGui[getgenv().LibName].Enabled then
+            Shadow.Visible = false
             game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
                 Size = UDim2.new(0,0,0,0)
             }):Play()
@@ -437,8 +439,9 @@ function Kavo.CreateLib(kavName, themeList)
         else
             game.CoreGui[getgenv().LibName].Enabled = true
             game.TweenService:Create(Main, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-                Size = UDim2.new(0, 575, 0, 330)
+                Size = UDim2.new(0, 576, 0, 330)
             }):Play()
+            Shadow.Visible = true
         end
     end
 

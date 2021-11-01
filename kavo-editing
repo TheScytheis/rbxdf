@@ -2334,6 +2334,7 @@ function Kavo.CreateLib(kavName, themeList)
                     searchframe.Position = UDim2.new(0.900000007, 0, 0.151999995, 0)
                     searchframe.Size = UDim2.new(0, 23, 0, 23)
                     searchframe.ZIndex = 2
+		    
                     searchbtn.Name = "viewInfo"
                     searchbtn.Parent = dropOpen
                     searchbtn.BackgroundTransparency = 1.000
@@ -2341,8 +2342,8 @@ function Kavo.CreateLib(kavName, themeList)
                     searchbtn.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
                     searchbtn.Size = UDim2.new(0, 23, 0, 23)
                     searchbtn.ZIndex = 2
-                    searchbtn.Image = "rbxassetid://7787658892"
-                    searchbtn.ImageColor3 = themeList.SchemeColor
+                    searchbtn.Image = "http://www.roblox.com/asset/?id=6521439400"
+                    searchbtn.ImageColor3 = themeList.TextColor
 
                     STextBox.Parent = searchframe
                     STextBox.BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 - 6, themeList.ElementColor.g * 255 - 6, themeList.ElementColor.b * 255 - 7)
@@ -2450,7 +2451,7 @@ function Kavo.CreateLib(kavName, themeList)
                         dropFrame.BackgroundColor3 = themeList.Background
                         listImg.ImageColor3 = themeList.SchemeColor
                         itemTextbox.TextColor3 = themeList.TextColor
-                        searchbtn.ImageColor3 = themeList.SchemeColor
+                        searchbtn.ImageColor3 = themeList.TextColor
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
                         moreInfo.TextColor3 = themeList.TextColor
                     end
@@ -3018,8 +3019,8 @@ function Kavo.CreateLib(kavName, themeList)
                     searchbtn.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
                     searchbtn.Size = UDim2.new(0, 23, 0, 23)
                     searchbtn.ZIndex = 2
-                    searchbtn.Image = "rbxassetid://7787658892"
-                    searchbtn.ImageColor3 = themeList.SchemeColor
+                    searchbtn.Image = "http://www.roblox.com/asset/?id=6521439400"
+                    searchbtn.ImageColor3 = themeList.TextColor
 
                     STextBox.Parent = searchframe
                     STextBox.BackgroundColor3 = Color3.fromRGB(themeList.ElementColor.r * 255 - 6, themeList.ElementColor.g * 255 - 6, themeList.ElementColor.b * 255 - 7)
@@ -3127,7 +3128,7 @@ function Kavo.CreateLib(kavName, themeList)
                         dropFrame.BackgroundColor3 = themeList.Background
                         listImg.ImageColor3 = themeList.SchemeColor
                         itemTextbox.TextColor3 = themeList.TextColor
-                        searchbtn.ImageColor3 = themeList.SchemeColor
+                        searchbtn.ImageColor3 = themeList.TextColor
                         moreInfo.BackgroundColor3 = Color3.fromRGB(themeList.SchemeColor.r * 255 - 14, themeList.SchemeColor.g * 255 - 17, themeList.SchemeColor.b * 255 - 13)
                         moreInfo.TextColor3 = themeList.TextColor
                     end

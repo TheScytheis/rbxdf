@@ -3204,7 +3204,7 @@ function Kavo.CreateLib(kavName, themeList)
                                 end
                             end
                         end
-			callback(v)
+			callback(value)
         	        end)
                 end
             
@@ -3226,7 +3226,7 @@ function Kavo.CreateLib(kavName, themeList)
                                     end
                                 end
                             end
-			    callback(v)
+			    callback(value)
                         end)
                     end
                     if opened then 

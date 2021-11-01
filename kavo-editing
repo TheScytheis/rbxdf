@@ -3195,7 +3195,6 @@ function Kavo.CreateLib(kavName, themeList)
 
                 for i,v in next, list do
                     Elements:NewDToggle(v,dropFrame, function(value)
-                        callback(v)
                         if not table.find(letable, v) then
                             table.insert(letable, v)
                         else
@@ -3205,6 +3204,7 @@ function Kavo.CreateLib(kavName, themeList)
                                 end
                             end
                         end
+			callback(v)
         	        end)
                 end
             
@@ -3217,7 +3217,6 @@ function Kavo.CreateLib(kavName, themeList)
                     end
                     for i,v in next, list do
                         Elements:NewDToggle(v,dropFrame, function(value)
-                            callback(v)
                             if not table.find(letable, v) then
                                 table.insert(letable, v)
                             else
@@ -3227,6 +3226,7 @@ function Kavo.CreateLib(kavName, themeList)
                                     end
                                 end
                             end
+			    callback(v)
                         end)
                     end
                     if opened then 

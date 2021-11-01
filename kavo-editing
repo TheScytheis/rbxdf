@@ -3207,7 +3207,7 @@ function Kavo.CreateLib(kavName, themeList)
 			for ind,val in pairs(letable) do
 			print(ind, val)
 			end
-			callback(value)
+			callback(letable)
         	        end)
                 end
             
@@ -3232,7 +3232,7 @@ function Kavo.CreateLib(kavName, themeList)
 			    for ind,val in pairs(letable) do
 				print(ind, val)
 				end
-				callback(value)
+				callback(letable)
                         end)
                     end
                     if opened then 

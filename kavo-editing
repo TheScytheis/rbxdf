@@ -3196,6 +3196,7 @@ function Kavo.CreateLib(kavName, themeList)
                 for i,v in next, list do
                     Elements:NewDToggle(v,dropFrame, function(value)
 		    	callback(v)
+			print("new")
                         if not table.find(letable, v) then
                             table.insert(letable, v)
                         else

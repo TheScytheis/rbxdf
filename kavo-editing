@@ -3195,16 +3195,17 @@ function Kavo.CreateLib(kavName, themeList)
 
                 for i,v in next, list do
                     Elements:NewDToggle(v,dropFrame, function(value)
-            		if not table.find(letable, v) then
-                		table.insert(letable, v)
-            		else
-                		for ind,val in pairs(letable) do
-				   if val == v then
-				   	table.remove(letable, ind)
-				   end
-				end
-            		end
-        	    end)
+                        callback(v)
+                        if not table.find(letable, v) then
+                            table.insert(letable, v)
+                        else
+                            for ind,val in pairs(letable) do
+                                if val == v then
+                                    table.remove(letable, ind)
+                                end
+                            end
+                        end
+        	        end)
                 end
             
                 function DropFunction:RefreshTD(newList)
@@ -3214,14 +3215,19 @@ function Kavo.CreateLib(kavName, themeList)
                             v:Destroy()
                         end
                     end
-                    for i,v in next, newList do
+                    for i,v in next, list do
                         Elements:NewDToggle(v,dropFrame, function(value)
-            			if not table.find(letable, value) then
-                			table.insert(letable, value)
-            			else
-                			letable[value] = nil
-            			end
-        	    	end)
+                            callback(v)
+                            if not table.find(letable, v) then
+                                table.insert(letable, v)
+                            else
+                                for ind,val in pairs(letable) do
+                                    if val == v then
+                                        table.remove(letable, ind)
+                                    end
+                                end
+                            end
+                        end)
                     end
                     if opened then 
                         dropFrame:TweenSize(UDim2.new(0, 352, 0, UIListLayout.AbsoluteContentSize.Y), "InOut", "Linear", 0.08, true)

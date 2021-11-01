@@ -2339,8 +2339,8 @@ function Kavo.CreateLib(kavName, themeList)
                     searchbtn.Parent = dropOpen
                     searchbtn.BackgroundTransparency = 1.000
                     searchbtn.LayoutOrder = 9
-                    searchbtn.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
-                    searchbtn.Size = UDim2.new(0, 23, 0, 23)
+                    searchbtn.Position = UDim2.new(0.930000007, 0, 0.22, 0)
+                    searchbtn.Size = UDim2.new(0, 17, 0, 17)
                     searchbtn.ZIndex = 2
                     searchbtn.Image = "http://www.roblox.com/asset/?id=6521439400"
                     searchbtn.ImageColor3 = themeList.TextColor
@@ -3016,8 +3016,8 @@ function Kavo.CreateLib(kavName, themeList)
                     searchbtn.Parent = dropOpen
                     searchbtn.BackgroundTransparency = 1.000
                     searchbtn.LayoutOrder = 9
-                    searchbtn.Position = UDim2.new(0.930000007, 0, 0.151999995, 0)
-                    searchbtn.Size = UDim2.new(0, 23, 0, 23)
+                    searchbtn.Position = UDim2.new(0.930000007, 0, 0.22, 0)
+                    searchbtn.Size = UDim2.new(0, 17, 0, 17)
                     searchbtn.ZIndex = 2
                     searchbtn.Image = "http://www.roblox.com/asset/?id=6521439400"
                     searchbtn.ImageColor3 = themeList.TextColor

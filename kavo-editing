@@ -2704,7 +2704,7 @@ function Kavo.CreateLib(kavName, themeList)
 	    --My Drop Experiences
 	    
 	    function Elements:NewDToggle(tname, Drop, condition, callback)
-                local TogFunction = {}
+                local DTogFunction = {}
                 tname = tname or "Toggle"
                 callback = callback or function() end
                 local toggled = false
@@ -2845,7 +2845,7 @@ function Kavo.CreateLib(kavName, themeList)
                         Sample.ImageColor3 = themeList.SchemeColor
                     end
                 end)()
-                function TogFunction:UpdateDToggle(newText, isTogOn)
+                function DTogFunction:UpdateDToggle(newText, isTogOn)
                     isTogOn = isTogOn or toggle
                     if newText ~= nil then 
                         togName.Text = newText

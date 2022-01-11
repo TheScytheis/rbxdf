@@ -3335,13 +3335,13 @@ function Kavo.CreateLib(kavName, themeList)
                         end
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
                     end
-		    pcall(callback, a.KeyCode.Name)
+		    pcall(callback, a.KeyCode)
                 end)
         
                 game:GetService("UserInputService").InputBegan:connect(function(current, ok) 
                     if not ok then 
                         if current.KeyCode.Name == oldKey then 
-                            callback(current.KeyCode.Name)
+                            callback(current.KeyCode)
                         end
                     end
                 end)

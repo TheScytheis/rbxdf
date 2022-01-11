@@ -2703,7 +2703,7 @@ function Kavo.CreateLib(kavName, themeList)
             end
 	    --My Drop Experiences
 	    
-	    function Elements:NewDToggle(tname, Drop, callback)
+	    function Elements:NewDToggle(tname, Drop, condition, callback)
                 local TogFunction = {}
                 tname = tname or "Toggle"
                 callback = callback or function() end
@@ -3194,7 +3194,8 @@ function Kavo.CreateLib(kavName, themeList)
                 end)]]
 
                 for i,v in next, list do
-                    Elements:NewDToggle(v,dropFrame, function(value)
+			local enabled = false
+                    Elements:NewDToggle(v, dropFrame, enabled, function(value)
                         if not table.find(letable, v) then
                             table.insert(letable, v)
                         else
@@ -3209,6 +3210,11 @@ function Kavo.CreateLib(kavName, themeList)
 			end
 			callback(letable)
         	        end)
+			if table.find(letable, v) then
+			enabled = true
+			print("enabling "..v)
+			Elements:UpdateDToggle(v, enabled)
+			end
                 end
             
                 function DropFunction:RefreshTD(newList)
@@ -3219,7 +3225,11 @@ function Kavo.CreateLib(kavName, themeList)
                         end
                     end
                     for i,v in next, list do
-                        Elements:NewDToggle(v,dropFrame, function(value)
+		    	local enabled = false
+			if table.find(letable, v) then
+			enabled = true
+			end
+                        Elements:NewDToggle(v,dropFrame, enabled, function(value)
                             if not table.find(letable, v) then
                                 table.insert(letable, v)
                             else

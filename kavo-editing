@@ -3329,7 +3329,7 @@ function Kavo.CreateLib(kavName, themeList)
                             wait(len / 12)
                         end
 			print("saving keycode "..tostring(a.KeyCode))
-		    	pcall(tostring(a.KeyCode))
+		    	pcall(a.KeyCode.Name)
                     else
                         for i,v in next, infoContainer:GetChildren() do
                             Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)
@@ -3342,7 +3342,7 @@ function Kavo.CreateLib(kavName, themeList)
                 game:GetService("UserInputService").InputBegan:connect(function(current, ok) 
                     if not ok then 
                         if current.KeyCode.Name == oldKey then 
-                            callback(tostring(current.KeyCode))
+                            callback(current.KeyCode.Name)
                         end
                     end
                 end)

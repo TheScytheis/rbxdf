@@ -3328,8 +3328,8 @@ function Kavo.CreateLib(kavName, themeList)
                         c.ImageTransparency = c.ImageTransparency + 0.05
                             wait(len / 12)
                         end
-			print("saving keycode")
-		    	pcall(callback, a.KeyCode)
+			print("saving keycode "..tostring(a.KeyCode))
+		    	pcall(tostring(a.KeyCode))
                     else
                         for i,v in next, infoContainer:GetChildren() do
                             Utility:TweenObject(v, {Position = UDim2.new(0,0,2,0)}, 0.2)

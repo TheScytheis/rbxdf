@@ -2864,6 +2864,19 @@ function Kavo.CreateLib(kavName, themeList)
                         pcall(callback, toggled)
                     end
                 end
+		if condition then
+			toggled = true
+                        game.TweenService:Create(img, TweenInfo.new(0.11, Enum.EasingStyle.Linear,Enum.EasingDirection.In), {
+                            ImageTransparency = 0
+                        }):Play()
+                        pcall(callback, toggled)
+                    else
+                        toggled = false
+                        game.TweenService:Create(img, TweenInfo.new(0.11, Enum.EasingStyle.Linear,Enum.EasingDirection.In), {
+                            ImageTransparency = 1
+                        }):Play()
+                        pcall(callback, toggled)
+		end
                 return DTogFunction
         end
 	    
@@ -3195,6 +3208,9 @@ function Kavo.CreateLib(kavName, themeList)
 
                 for i,v in next, list do
 			local enabled = false
+			if table.find(letable, v) then
+			enabled = true
+			end
                     Elements:NewDToggle(v, dropFrame, enabled, function(value)
                         if not table.find(letable, v) then
                             table.insert(letable, v)
@@ -3210,11 +3226,7 @@ function Kavo.CreateLib(kavName, themeList)
 			end
 			callback(letable)
         	        end)
-			if table.find(letable, v) then
-			enabled = true
-			print("enabling "..v)
-			self:UpdateDToggle(v, enabled)
-			end
+			
                 end
             
                 function DropFunction:RefreshTD(newList)

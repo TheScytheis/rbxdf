@@ -3328,7 +3328,6 @@ function Kavo.CreateLib(kavName, themeList)
                         c.ImageTransparency = c.ImageTransparency + 0.05
                             wait(len / 12)
                         end
-			print("saving keycode "..tostring(a.KeyCode))
 		    	pcall(a.KeyCode.Name)
                     else
                         for i,v in next, infoContainer:GetChildren() do

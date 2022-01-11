@@ -3213,7 +3213,7 @@ function Kavo.CreateLib(kavName, themeList)
 			if table.find(letable, v) then
 			enabled = true
 			print("enabling "..v)
-			Elements:UpdateDToggle(v, enabled)
+			self:UpdateDToggle(v, enabled)
 			end
                 end
             
